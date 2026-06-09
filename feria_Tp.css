@@ -157,7 +157,7 @@ footer{
 
 .sube{
     right: 34%;
-    position: absolute;
+    position: relative;
     width: 60px;
     top: -80%;
     
