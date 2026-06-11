@@ -176,8 +176,8 @@ footer{
 
 .repe{
     display: flex;
-    width: 10%;
-    height: 10%;
+    max-width: 10%;
+    max-height: 10%;
     right:4%;
     position: relative;
     gap: 15px;
