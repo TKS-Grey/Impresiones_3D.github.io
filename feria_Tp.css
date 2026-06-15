@@ -27,14 +27,36 @@ header{
 
 .titulo{
     color:white;
+    cursor: default;
     align-items: center;
+    transition: all 0.4s ease;
+}
+
+.titulo:hover{
+    color:#90e0ef;
+    transform: scale(1.2);
+    text-shadow: 0 0 10px #73bce2;
+}
+
+.XD{
+    color:white;
+    font-size: 24px;
+    transition: all 0.4s ease;
 }
 
 .menu{
     list-style:none;
     display:flex;
+    cursor: default;
     gap:30px;
     left: 90%;
+    transition: all 0.4s ease;
+}
+
+.menu:hover{
+    color:#90e0ef;
+    transform: scale(1.2);
+    text-shadow: 0 0 10px #74bce2;
 }
 
 .menu li{
@@ -102,6 +124,7 @@ main{
     padding:40px;
     border-radius:15px;
     box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    cursor: default;
     text-align:center;
 }
 
@@ -146,6 +169,7 @@ footer{
     display:block;
     margin:20px auto;
     border-radius:10px;
+    border: 2px solid #347396;
 }
 
 .centroa{
@@ -165,8 +189,9 @@ footer{
 
 .nombe{
     display: flex;
-    padding: 2px;
+    padding: 2px 5px 3px;
     gap: 10px;
+    
 }
 
 .dropdown{
@@ -176,7 +201,7 @@ footer{
 
 .repe{
     display: flex;
-    right:4%;
+    right:3.7%;
     position: relative;
     gap: 15px;
 }
@@ -201,16 +226,13 @@ footer{
     margin-top: 10px;
     text-align:center;
 }
-
-.enviar correo{
-    background:#3b728f;
-    margin-top: 10px;
-    text-align:center;
-    padding: 20px;
-}
-
 .ordenar{
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+.envio_correo{
+    padding: 20px;
+    justify-content: center;
 }
