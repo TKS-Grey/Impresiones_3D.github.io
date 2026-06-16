@@ -38,6 +38,13 @@ header{
     text-shadow: 0 0 10px #73bce2;
 }
 
+a:link {
+    color: #ffffff;
+}
+
+a:visited {
+    color: #ffffff;
+}
 .XD{
     color:white;
     font-size: 24px;
@@ -51,6 +58,7 @@ header{
     gap:30px;
     left: 90%;
     transition: all 0.4s ease;
+    font-weight: bolder;
 }
 
 .menu:hover{
