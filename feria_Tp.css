@@ -243,4 +243,9 @@ footer{
 .envio_correo{
     padding: 20px;
     justify-content: center;
+    border-radius: 10px;
+}
+
+.btnBajar{
+    border-radius: 10%;
 }
