@@ -6,7 +6,7 @@
     <title>Impresiones 3D</title>
 
     <link rel="stylesheet" href="feria_Tp.css">
-    <script src="ADA.js"></script>
+    <script src="feria_Tp.js"></script>
 </head>
     <!--Socios, roles;
         Diseño de la pagina: Baltazar Gonzalez y Victor Uribe
@@ -15,6 +15,7 @@
         Revision de solicitudes: Tomás Fernandez
         Popups js: Tomas x2 y Baltazar
 
+        Agregar Popups, Mejorar el diseño,
     -->
 <body>
 
@@ -27,7 +28,7 @@
                     <ul class="sub">
                         <li><a href="XDDDDD" target="_blank">Figuras Bajas</a></li>
                         <li><a href="XDDDDDDDD" target="_blank">Figuras Medias</a></li>
-                        <li><a href="xDDDDDDDDD" target="_blank">Futura Producción</a></li>
+                        <li><a href="xDDDDDDDDD" target="_blank">Futura Production</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -46,10 +47,15 @@
     <section class="co">
         <h1>¿Sobre que es nuestro proyecto?</h1>
         <p>
-            Conciste en la impresion de modelos 3D, esto con el fin de que la comunidad educativa
-            (principlamente estudiantes)tengan la oportunidad de materializar sus propias ideas. 
+            Consiste en la impresion de modelos 3D, esto con el fin de que la comunidad educativa
+            (principalmente estudiantes) tengan la oportunidad de materializar sus propias ideas. 
             Esto con el fin de fomentar la imaginacion de futuros diseñadores 3D o aficionados a la impresion 3D. 
         </p>
+
+        <button id="btnBajar" style="padding: 2px 5px; font-size: 16px; cursor: pointer; margin-bottom: 10px;">
+            Hacer solicitud
+        </button>
+
         <div class="repe">
             <img class="imagen" src="https://http2.mlstatic.com/D_NQ_NP_885641-MLC81786860502_012025-O.webp" alt="Figurita" width="300" height="300" >
             <img class="imagen" src="https://tufigura3d.com/wp-content/uploads/2021/03/Impresion-3D-filamento-vs-resina-scaled.jpg" alt="Figurita" width="300" height="300" >
@@ -67,7 +73,7 @@
     <br>
     <br>
     <br>
-        <div class="rojito">
+        <div id="seccionFormulario" class="rojito">
             <h2 class="soli">Solicitud</h2>
             
             <main>
@@ -109,5 +115,19 @@
         </div>
     </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const boton = document.getElementById('btnBajar');
+            const destino = document.getElementById('seccionFormulario');
+
+            if (boton && destino) {
+                boton.addEventListener('click', () => {
+                    destino.scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
