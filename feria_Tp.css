@@ -55,8 +55,7 @@ a:visited {
     list-style:none;
     display:flex;
     cursor: default;
-    gap:30px;
-    left: 90%;
+    gap:20px;
     transition: all 0.4s ease;
     font-weight: bolder;
 }
@@ -188,11 +187,8 @@ footer{
 }
 
 .sube{
-    right: 24%;
-    position: relative;
-    width: 60px;
-    top: -80%;
-    
+    margin-top:20px;
+    width:120px;
 }
 
 .nombe{
@@ -204,7 +200,6 @@ footer{
 
 .dropdown{
     position: relative;
-    right: 25%;
 }
 
 .repe{
@@ -246,6 +241,40 @@ footer{
     border-radius: 10px;
 }
 
-.btnBajar{
-    border-radius: 10%;
+#btnBajar{
+    padding: 10px 22px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    background:
+        linear-gradient(white, white) padding-box,
+        linear-gradient(
+            90deg,
+            red,
+            orange,
+            yellow,
+            lime,
+            cyan,
+            blue,
+            violet,
+            red
+        ) border-box;
+    background-size: 100% 100%, 300% 100%;
+    animation: arcoiris 4s linear infinite;
+    color: #3b728f;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+#btnBajar:hover{
+    transform: scale(1.05);
+}
+
+@keyframes arcoiris{
+    0%{
+        background-position: 0 0, 0% 50%;
+    }
+    100%{
+        background-position: 0 0, 300% 50%;
+    }
 }
