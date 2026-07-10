@@ -60,6 +60,26 @@ a:visited {
     font-weight: bolder;
 }
 
+.menu a,
+.menu button{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    padding:10px;
+    display:block;
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.menu a:hover,
+.menu button:hover{
+    color:#90e0ef;
+}
+
 .menu:hover{
     color:#90e0ef;
     transform: scale(1.2);
@@ -96,6 +116,7 @@ a:visited {
     visibility:hidden;
     transform:translateY(-10px);
     transition:0.3s;
+    color:#4c5458;
 }
 
 .sub li{
@@ -239,42 +260,4 @@ footer{
     padding: 20px;
     justify-content: center;
     border-radius: 10px;
-}
-
-#btnBajar{
-    padding: 10px 22px;
-    border: 2px solid transparent;
-    border-radius: 30px;
-    background:
-        linear-gradient(white, white) padding-box,
-        linear-gradient(
-            90deg,
-            red,
-            orange,
-            yellow,
-            lime,
-            cyan,
-            blue,
-            violet,
-            red
-        ) border-box;
-    background-size: 100% 100%, 300% 100%;
-    animation: arcoiris 4s linear infinite;
-    color: #3b728f;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform .3s;
-}
-
-#btnBajar:hover{
-    transform: scale(1.05);
-}
-
-@keyframes arcoiris{
-    0%{
-        background-position: 0 0, 0% 50%;
-    }
-    100%{
-        background-position: 0 0, 300% 50%;
-    }
 }
