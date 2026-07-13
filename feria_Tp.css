@@ -198,6 +198,21 @@ footer{
     margin:20px auto;
     border-radius:10px;
     border: 2px solid #347396;
+    width: 25vw;
+    height: 20vw;
+    min-width: 120px;
+    min-height: 120px;
+}
+
+.long-imagen{
+    display:block;
+    margin:20px auto;
+    border-radius:10px;
+    border: 2px solid #347396;
+    width: 45vw;
+    height: 25vw;
+    min-width: 120px;
+    min-height: 120px;
 }
 
 .centroa{
