@@ -201,7 +201,6 @@ footer{
     max-width:250px;
     height:auto;
     display:block;
-    margin:auto;
     border-radius:10px;
     border:2px solid #347396;
 }
@@ -278,30 +277,34 @@ footer{
     border-radius: 10px;
 }
 
-input,
-textarea,
-select{
-    flex:1;
-    padding:10px;
-    border-radius:6px;
-    border:1px solid #999;
-    font-size:16px;
+.introduccion{
+    display: flex;
+    background-color: #3B728F;
+    color: #ffffff;
+    border-radius: 0%;
 }
 
+@media (max-width: 768px){
 
-/* ---------- CELULARES ---------- */
-@media (max-width:600px){
+    header{
+        padding:15px;
+    }
 
     .navbar{
         flex-direction:column;
         gap:15px;
     }
 
+    .titulo{
+        font-size:28px;
+        text-align:center;
+    }
+
     .menu{
-        flex-direction:column;
         width:100%;
+        flex-direction:column;
         align-items:center;
-        gap:5px;
+        gap:10px;
     }
 
     .menu li{
@@ -312,21 +315,42 @@ select{
     .menu button{
         width:100%;
         text-align:center;
+        font-size:18px;
+        padding:12px;
     }
 
-    .nombe{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    input,
-    textarea,
-    select{
+    /* El submenú deja de salir flotando */
+    .sub{
+        position:static;
+        opacity:1;
+        visibility:visible;
+        transform:none;
+        background:#eef6f7;
+        box-shadow:none;
+        border-radius:8px;
+        margin-top:5px;
         width:100%;
     }
 
-    .sube{
+    .sub a{
+        text-align:center;
+    }
+
+    .centroa{
+        padding:15px;
+    }
+
+    .co{
         width:100%;
+        padding:20px;
+    }
+
+    .co h1{
+        font-size:28px;
+    }
+
+    .co p{
+        font-size:17px;
     }
 
     .repe{
@@ -335,10 +359,49 @@ select{
     }
 
     .imagen{
-        max-width:90%;
+        max-width:100%;
     }
 
     .long-imagen{
         max-width:100%;
+    }
+
+    main{
+        padding:10px;
+    }
+
+    form{
+        width:100%;
+    }
+
+    .nombe{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .nombe span{
+        margin-bottom:5px;
+    }
+
+    .nombe input,
+    .nombe select,
+    .nombe textarea{
+        width:100%;
+        padding:10px;
+        font-size:16px;
+    }
+
+    .sube{
+        width:100%;
+        padding:12px;
+        font-size:18px;
+    }
+
+    .Redes{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding:20px;
     }
 }
