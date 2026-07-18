@@ -151,8 +151,7 @@ main{
 .co{
     background:white;
     width:90%;
-    max-width:900px;
-    padding:40px;
+    padding:4%;
     border-radius:15px;
     box-shadow:0 8px 20px rgba(0,0,0,0.1);
     cursor:default;
@@ -219,10 +218,12 @@ footer{
 }
 
 .centroa{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto; 
+    padding: 50px;
 }
 
 .sube{
