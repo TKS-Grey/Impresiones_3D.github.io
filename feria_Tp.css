@@ -171,10 +171,13 @@ main{
 }
 
 .rojito{
-    background:#ffe5e5;
-    border-left:8px solid#347396;
-    padding:20px;
-    border-radius:10px;
+    background:#ffffff;
+    max-width:650px;
+    margin:50px auto;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    border-top:6px solid #3b728f;
 }
 
 .rojito h2{
@@ -223,15 +226,60 @@ footer{
 }
 
 .sube{
-    margin-top:20px;
-    width:120px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#347396;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    margin-top:15px;
+}
+
+.sube:hover{
+    background:#2b5f7d;
+    transform:translateY(-2px);
+    box-shadow:0 8px 15px rgba(0,0,0,.15);
 }
 
 .nombe{
     display:flex;
-    align-items:center;
-    gap:10px;
-    margin:15px 0;
+    flex-direction:column;
+    align-items:flex-start;
+    margin-bottom:20px;
+}
+
+.nombe span{
+    font-weight:bold;
+    color:#347396;
+    margin-bottom:8px;
+}
+
+.nombe input,
+.nombe select,
+.nombe textarea{
+    width:100%;
+    padding:12px;
+    border:2px solid #d6d6d6;
+    border-radius:10px;
+    font-size:15px;
+    transition:.3s;
+    outline:none;
+}
+
+.nombe input:focus,
+.nombe select:focus,
+.nombe textarea:focus{
+    border-color:#3b728f;
+    box-shadow:0 0 10px rgba(59,114,143,.25);
+}
+
+.nombe textarea{
+    resize:vertical;
+    min-height:120px;
 }
 
 .dropdown{
@@ -246,18 +294,22 @@ footer{
 }
 
 .soli{
-    font-size: 25px;
-    text-decoration: underline;
-    bottom:-20%;
-    position: relative;
+    text-align:center;
+    font-size:32px;
+    color:#347396;
+    margin-bottom:30px;
+    text-decoration:none;
+    position:static;
+    font-weight:bold;
 }
 
 .difuminado{
-    color: #333;
-    opacity: 0.6;
-    font-size: 14px;
-    top:10%;
-    position: relative;
+    text-align:center;
+    color:#666;
+    font-size:13px;
+    margin-top:20px;
+    position:static;
+    opacity:.8;
 }
 
 .nada{
