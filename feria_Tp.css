@@ -150,11 +150,12 @@ main{
 
 .co{
     background:white;
-    width:90%;
-    padding:4%;
+    width:95%;
+    max-width:1100px;
+    margin:0 auto;
+    padding:40px;
     border-radius:15px;
     box-shadow:0 8px 20px rgba(0,0,0,0.1);
-    cursor:default;
     text-align:center;
 }
 
@@ -207,14 +208,16 @@ footer{
     border:2px solid #347396;
 }
 
+.contenedor-imagen{
+    display: flex;
+}
+
 .long-imagen{
-    width:100%;
-    max-width:700px;
-    height:auto;
-    display:block;
-    margin:40px auto;
-    border-radius:10px;
-    border:2px solid #347396;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #347396;
 }
 
 .centroa{
@@ -222,7 +225,7 @@ footer{
     justify-content: center;
     align-items: center;
     width: 90%;
-    margin: 0 auto; 
+    margin: 50px auto; 
     padding: 50px;
 }
 
@@ -335,6 +338,64 @@ footer{
     background-color: #3B728F;
     color: #ffffff;
     border-radius: 0%;
+}
+
+.redes{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    margin-top:-5%;
+    margin-right:20px;
+    gap: 3%;
+}
+
+
+.red-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    background:#347396;
+    color:white !important;
+
+    padding:12px 25px;
+    border-radius:12px;
+
+    font-size:18px;
+    font-weight:bold;
+
+    transition:.3s;
+    box-shadow:0 5px 12px rgba(0,0,0,.15);
+}
+
+
+.red-btn i{
+    font-size:25px;
+}
+
+
+.red-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+}
+
+
+/* Instagram */
+.instagram:hover{
+    background:linear-gradient(
+        45deg,
+        #feda75,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+}
+
+
+/* Twitter/X */
+.twitter:hover{
+    background:#000;
 }
 
 @media (max-width: 768px){
@@ -450,11 +511,27 @@ footer{
         font-size:18px;
     }
 
-    .Redes{
+    .redes{
         display:flex;
-        flex-direction:column;
+        justify-content:center;
         align-items:center;
-        gap:15px;
+        flex-wrap:wrap;
+        gap:10px;
         padding:20px;
+    }
+
+    .redes{
+        display:flex;
+        flex-direction:row;
+        gap:10px;
+    }
+
+    .red-btn{
+        padding:10px 16px;
+        font-size:15px;
+    }
+
+    .red-btn i{
+        font-size:20px;
     }
 }
