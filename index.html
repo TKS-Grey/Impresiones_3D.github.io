@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="feria_Tp.css">
     <script src="feria_Tp.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
     <!--Socios, roles;
         Diseño de la pagina: Baltazar Gonzalez y Victor Uribe
@@ -25,14 +26,11 @@
         <h2 class="titulo">
             <a href="https://tks-grey.github.io/Impresiones_3D.github.io/">Impresiones 3D</a>
         </h2>
-
         <ul class="menu">
-
             <li class="dropdown">
                 <button onclick="mostrarMensaje()" class="introduccion">
                     Introduccion a nuestra pagina
                 </button>
-
                 <script>
                     function mostrarMensaje(){
                         alert("XD")
@@ -55,7 +53,7 @@
             </li>
 
             <li class="dropdown">
-                <button id="contacto">Contacto</button>
+                <button id="parteRedes">Contacto</button>
             </li>
 
         </ul>
@@ -63,72 +61,73 @@
 </header>
 
     <div class="centroa">
-    <section class="co">
-        <h1>¿Sobre que es nuestro proyecto?</h1>
-        <p>
-            Consiste en la impresion de modelos 3D, esto con el fin de que la comunidad educativa
-            (principalmente estudiantes) tengan la oportunidad de materializar sus propias ideas. 
-            Esto con el fin de fomentar la imaginacion de futuros diseñadores 3D o aficionados a la impresion 3D. 
-        </p>
-
-        
-        <div class="repe">
-            <img class="imagen" src="https://http2.mlstatic.com/D_NQ_NP_885641-MLC81786860502_012025-O.webp" alt="Figurita">
-            <img class="imagen" src="https://tufigura3d.com/wp-content/uploads/2021/03/Impresion-3D-filamento-vs-resina-scaled.jpg" alt="Figurita">
-            <img class="imagen" src="https://dl2.myminifactory.com/object-assets/5f91a4d61d4a1/images/img-20201103-192004.jpg" alt="Figurita">
-        </div>
-        <p>
-        <br>
-            Aqui algunas pequeñas muestras de la variedad de figuras que podemos lograr con las impresiones 3D
-        </p>
-        <br>
-    <img class="long-imagen" src="https://www.impresoras3d.com/wp-content/uploads/2022/06/Portada-ideas-Pokemon-1400x735.jpg" alt="Figura">
-        <div id="seccionFormulario" class="rojito">
-            <h2 class="soli">Solicitud</h2>
-            
-            <main>
-                <form action="https://formsubmit.co/impresiones3daml@gmail.com" method="POST">
-                    <div class="nombe">
-                        <span>Nombre: </span>
-                        <input type="text" name="nombre" required
-                        autocapitalize="words" autocomplete="off">
-                    </div>
-                    <div class="nombe">
-                        <span>Apellido: </span>
-                        <input type="text" name="apellido" required
-                        autocapitalize="words" autocomplete="off">
-                    </div>
-                    <div class="nombe">
-                        <span>Correo electrónico: </span>
-                        <input type="email" name="email" required
-                        autocapitalize="words" autocomplete="off">
-                    </div>
-                    <div class="nombe">
-                        <span>Asunto del mensaje: </span>
-                        <select name="asunto">
-                            <option>Solicitud</option>
-                            <option>Reclamo</option>
-                            <option>Consulta</option>
-                        </select>
-                    </div>
-                    <div class="nombe">
-                        <span>Mensaje:</span>
-                        <textarea
-                            name="mensaje"
-                            rows="4"
-                            placeholder="Escribe tu solicitud"
-                            required>
-                        </textarea> 
-                    </div>
-                    <button class="sube" type="submit">Enviar</button>
-                </form>
-            </main>
-            <br>
-            <p class="difuminado">
-                (En dado caso de que la figura reciba algun daño post entrega, esta no sera repuesta.)
+        <section class="co">
+            <h1>¿Sobre que es nuestro proyecto?</h1>
+            <p>
+                Consiste en la impresion de modelos 3D, esto con el fin de que la comunidad educativa
+                (principalmente estudiantes) tengan la oportunidad de materializar sus propias ideas. 
+                Esto con el fin de fomentar la imaginacion de futuros diseñadores 3D o aficionados a la impresion 3D. 
             </p>
-        </div>
-    </section>
+
+            
+            <div class="repe">
+                <img class="imagen" src="https://http2.mlstatic.com/D_NQ_NP_885641-MLC81786860502_012025-O.webp" alt="Figurita">
+                <img class="imagen" src="https://tufigura3d.com/wp-content/uploads/2021/03/Impresion-3D-filamento-vs-resina-scaled.jpg" alt="Figurita">
+                <img class="imagen" src="https://dl2.myminifactory.com/object-assets/5f91a4d61d4a1/images/img-20201103-192004.jpg" alt="Figurita">
+            </div>
+            <p>
+            <br>
+                Aqui algunas pequeñas muestras de la variedad de figuras que podemos lograr con las impresiones 3D
+            </p>
+            <br>
+        <img class="long-imagen" src="https://www.impresoras3d.com/wp-content/uploads/2022/06/Portada-ideas-Pokemon-1400x735.jpg" alt="Figura">
+            <div id="seccionFormulario" class="rojito">
+                <h2 class="soli">Solicitud</h2>
+                
+                <main>
+                    <form action="https://formsubmit.co/impresiones3daml@gmail.com" method="POST">
+                        <div class="nombe">
+                            <span>Nombre: </span>
+                            <input type="text" name="nombre" required
+                            autocapitalize="words" autocomplete="off">
+                        </div>
+                        <div class="nombe">
+                            <span>Apellido: </span>
+                            <input type="text" name="apellido" required
+                            autocapitalize="words" autocomplete="off">
+                        </div>
+                        <div class="nombe">
+                            <span>Correo electrónico: </span>
+                            <input type="email" name="email" required
+                            autocapitalize="words" autocomplete="off">
+                        </div>
+                        <div class="nombe">
+                            <span>Asunto del mensaje: </span>
+                            <select name="asunto">
+                                <option>Solicitud</option>
+                                <option>Reclamo</option>
+                                <option>Consulta</option>
+                            </select>
+                        </div>
+                        <div class="nombe">
+                            <span>Mensaje:</span>
+                            <textarea
+                                name="mensaje"
+                                rows="4"
+                                placeholder="Escribe tu solicitud"
+                                required>
+                            </textarea> 
+                        </div>
+                        <button class="sube" type="submit">Enviar</button>
+                    </form>
+                </main>
+                <br>
+                <p class="difuminado">
+                    (En dado caso de que la figura reciba algun daño post entrega, esta no sera repuesta.)
+                </p>
+            </div>
+        </section>
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', () =>{
             const boton = document.getElementById('btnBajar');
@@ -142,14 +141,11 @@
             }
         });
     </script>
-    <div class="Redes">
-        <a  href="xD">Instagram</a>
-        <a href="Xd">Twitter(X)</a>
-    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () =>{
-            const boton = document.getElementById('contacto');
-            const destino = document.getElementById('seccionFormulario');
+            const boton = document.getElementById('parteRedes');
+            const destino = document.getElementById('redes');
             if (boton && destino) {
                 boton.addEventListener('click', () => {
                     destino.scrollIntoView({ 
@@ -159,5 +155,15 @@
             }
         });
     </script>
+    <div id="redes" class="redes">
+        <a href="https://www.instagram.com/impresiones3daml?igsh=d2w1azA0MWZxMmtx" target="_blank" class="red-btn instagram">
+            <i class="fa-brands fa-instagram"></i>
+            Instagram
+        </a>
+        <a href="https://x.com/impesiones3DAML" target="_blank" class="red-btn twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+            Twitter(X)
+        </a>
+    </div>
 </body>
 </html>
