@@ -86,38 +86,31 @@
                 
                 <main>
                     <form action="https://formsubmit.co/impresiones3daml@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://tks-grey.github.io/Impresiones_3D.github.io/">
+
                         <div class="nombe">
                             <span>Nombre: </span>
                             <input type="text" name="nombre" required
                             autocapitalize="words" autocomplete="off">
                         </div>
+
                         <div class="nombe">
                             <span>Apellido: </span>
                             <input type="text" name="apellido" required
                             autocapitalize="words" autocomplete="off">
                         </div>
+
                         <div class="nombe">
                             <span>Correo electrónico: </span>
                             <input type="email" name="email" required
                             autocapitalize="words" autocomplete="off">
                         </div>
-                        <div class="nombe">
-                            <span>Asunto del mensaje: </span>
-                            <select name="asunto">
-                                <option>Solicitud</option>
-                                <option>Reclamo</option>
-                                <option>Consulta</option>
-                            </select>
-                        </div>
-                        <div class="nombe">
-                            <span>Mensaje:</span>
-                            <textarea
-                                name="mensaje"
-                                rows="4"
-                                placeholder="Escribe tu solicitud"
-                                required>
-                            </textarea> 
-                        </div>
+                        <div class="nombe"> 
+                            <span>Mensaje:</span> 
+                            <textarea name="mensaje" rows="4" placeholder="Escribe tu solicitud" required></textarea>
+                         </div>
                         <button class="sube" type="submit">Enviar</button>
                     </form>
                 </main>
