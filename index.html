@@ -20,41 +20,41 @@
     -->
 <body>
 
-<header>   
-    <nav class="navbar">
-        <h2 class="titulo">
-            <a href="https://tks-grey.github.io/Impresiones_3D.github.io/">Impresiones 3D</a>
-        </h2>
-        <ul class="menu">
-            <li class="dropdown">
-                <button onclick="mostrarMensaje()" class="introduccion">
-                    Introduccion a nuestra pagina
-                </button>
-                <!--Tomy tu haras este apartado del comentario en la pagina-->
-                <script>
-                    function mostrarMensaje(){
-                        alert("*Este apartado esta en mantenimiento, a más tardar el día 15/08/2026 estara completo*")
-                    }
-                </script>
-            </li>
-            <li class="dropdown">
-                <a href="http://127.0.0.1:5500/Skillnest_Grey/Feria%20Tp/feria%20Tp%20gallery/index.html">Nuestra galeria</a>
+    <header>   
+        <nav class="navbar">
+            <h2 class="titulo">
+                <a href="https://tks-grey.github.io/Impresiones_3D.github.io/">Impresiones 3D</a>
+            </h2>
+            <ul class="menu">
+                <li class="dropdown">
+                    <button onclick="mostrarMensaje()" class="introduccion">
+                        Introduccion a nuestra pagina
+                    </button>
+                    <!--Tomy tu haras este apartado del comentario en la pagina-->
+                    <script>
+                        function mostrarMensaje(){
+                            alert("*Este apartado esta en mantenimiento, a más tardar el día 15/08/2026 estara completo*")
+                        }
+                    </script>
+                </li>
+                <li class="dropdown">
+                    <a href="http://127.0.0.1:5500/Skillnest_Grey/Feria%20Tp/feria%20Tp%20gallery/index.html">Nuestra galeria</a>
 
-                <ul class="sub">
-                    <li><a href="https://tks-grey.github.io/Impresiones_3D-Gallery/" target="_blank">Figuras Bajas</a></li>
-                    <li><a href="https://tks-grey.github.io/Impresiones_3D-Gallery/" target="_blank">Figuras Medias</a></li>
-                    <li><a href="https://tks-grey.github.io/Impresiones_3D-Gallery/" target="_blank">Futura Production</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <button id="btnBajar">Hacer solicitud</button>
-            </li>
-            <li class="dropdown">
-                <button id="parteRedes">Contacto</button>
-            </li>
-        </ul>
-    </nav>
-</header>
+                    <ul class="sub">
+                        <a href="https://tks-grey.github.io/Impresiones_3D-Gallery/" target="_blank">Figuras Bajas</a>
+                        <a href="https://tks-grey.github.io/Impresiones_3D-Gallery/" target="_blank">Figuras Medias</a>
+                        <a href="https://tks-grey.github.io/Impresiones_3D-Gallery/" target="_blank">Futura Production</a>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <button id="btnBajar">Hacer solicitud</button>
+                </li>
+                <li class="dropdown">
+                    <button id="parteRedes">Contacto</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <div class="centroa">
         <section class="co">
             <h1>¿Sobre que es nuestro proyecto?</h1>
@@ -78,7 +78,9 @@
             <div id="seccionFormulario" class="rojito">
                 <h2 class="soli">Solicitud</h2>
                 <main>
-                    <form action="https://formsubmit.co/impresiones3daml@gmail.com" method="POST">
+                    <form action="https://formsubmit.co/impresiones3daml@gmail.com" method="POST"
+                    onsubmit="if(!this.email.value.endsWith('@alumnos.sip.cl'))
+                    { alert('Error: Usa tu correo institucional'); return false; }">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_next" value="https://tks-grey.github.io/Impresiones_3D.github.io/">
@@ -97,8 +99,10 @@
 
                         <div class="nombe">
                             <span>Correo electrónico: </span>
-                            <input type="email" name="email" required
-                            autocapitalize="words" autocomplete="off">
+                             <input type="text" name="email"
+                              required autocapitalize="none" 
+                              autocomplete="off" 
+                              placeholder="usuario@alumnos.sip.cl">
                         </div>
 
                         <div class="nombe">
@@ -167,16 +171,17 @@
             }
         });
     </script>
-    <div id="redes" class="redes">
-        <a href="https://www.instagram.com/impresiones3daml?igsh=d2w1azA0MWZxMmtx" target="_blank" class="red-btn instagram">
-            <i class="fa-brands fa-instagram"></i>
-            Instagram
-        </a>
-        <a href="https://x.com/impesiones3DAML" target="_blank" class="red-btn twitter">
-            <i class="fa-brands fa-x-twitter"></i>
-            Twitter(X)
-        </a>
-    </div>
-
+    <footer>
+        <div id="redes" class="redes">
+            <a href="https://www.instagram.com/impresiones3daml?igsh=d2w1azA0MWZxMmtx" target="_blank" class="red-btn instagram">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+            </a>
+            <a href="https://x.com/impesiones3DAML" target="_blank" class="red-btn twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+                Twitter(X)
+            </a>
+        </div>
+    </footer>
 </body>
 </html>
