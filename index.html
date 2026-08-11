@@ -20,7 +20,6 @@
     -->
 <body>
 
-
 <header>   
     <nav class="navbar">
         <h2 class="titulo">
@@ -31,14 +30,15 @@
                 <button onclick="mostrarMensaje()" class="introduccion">
                     Introduccion a nuestra pagina
                 </button>
+                <!--Tomy tu haras este apartado del comentario en la pagina-->
                 <script>
                     function mostrarMensaje(){
-                        alert("*Este apartado esta en mantenimiento, a más tardar el día 10/08/2026 estara completo*")
+                        alert("*Este apartado esta en mantenimiento, a más tardar el día 15/08/2026 estara completo*")
                     }
                 </script>
             </li>
             <li class="dropdown">
-                <a href="https://tks-grey.github.io/Impresiones_3D-Gallery/">Nuestra galeria</a>
+                <a href="http://127.0.0.1:5500/Skillnest_Grey/Feria%20Tp/feria%20Tp%20gallery/index.html">Nuestra galeria</a>
 
                 <ul class="sub">
                     <li><a href="https://tks-grey.github.io/Impresiones_3D-Gallery/" target="_blank">Figuras Bajas</a></li>
@@ -52,11 +52,9 @@
             <li class="dropdown">
                 <button id="parteRedes">Contacto</button>
             </li>
-
         </ul>
-</nav>
+    </nav>
 </header>
-
     <div class="centroa">
         <section class="co">
             <h1>¿Sobre que es nuestro proyecto?</h1>
@@ -71,8 +69,8 @@
                 <img class="imagen" src="https://tufigura3d.com/wp-content/uploads/2021/03/Impresion-3D-filamento-vs-resina-scaled.jpg" alt="Figurita">
                 <img class="imagen" src="https://dl2.myminifactory.com/object-assets/5f91a4d61d4a1/images/img-20201103-192004.jpg" alt="Figurita">
             </div>
-            <p>
             <br>
+            <p>
                 Aqui algunas pequeñas muestras de la variedad de figuras que podemos lograr con las impresiones 3D
             </p>
             <br>
@@ -102,6 +100,32 @@
                             <input type="email" name="email" required
                             autocapitalize="words" autocomplete="off">
                         </div>
+
+                        <div class="nombe">
+                            <span>Curso: </span>
+                            <select name="curso" required style="width: 100%; padding: 5px; border-radius: 4px;">
+                                <option value="" disabled selected>Selecciona tu curso</option>
+                                <option value="7°A Basico">7°A Basico</option>
+                                <option value="7°B Basico">7°B Basico</option>
+                                <option value="7°C Basico">7°C Basico</option>
+                                <option value="8°A Basico">8°A Basico</option>
+                                <option value="8°B Basico">8°B Basico</option>
+                                <option value="8°C Basico">8°C Basico</option>
+                                <option value="I°A Medio">I°A Medio</option>
+                                <option value="I°B Medio">I°B Medio</option>
+                                <option value="I°C Medio">I°C Medio</option>
+                                <option value="II°A Medio">II°A Medio</option>
+                                <option value="II°B Medio">II°B Medio</option>
+                                <option value="II°C Medio">II°C Medio</option>
+                                <option value="III°A Medio">III°A Medio</option>
+                                <option value="III°B Medio">III°B Medio</option>
+                                <option value="III°C Medio">III°C Medio</option>
+                                <option value="IV°A Medio">IV°A Medio</option>
+                                <option value="IV°B Medio">IV°B Medio</option>
+                                <option value="IV°C Medio">IV°C Medio</option>
+                            </select>
+                        </div>
+
                         <div class="nombe"> 
                             <span>Mensaje:</span> 
                             <textarea name="mensaje" rows="4" placeholder="Escribe tu solicitud" required></textarea>
@@ -153,5 +177,6 @@
             Twitter(X)
         </a>
     </div>
+
 </body>
 </html>
