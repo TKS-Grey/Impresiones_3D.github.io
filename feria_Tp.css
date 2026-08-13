@@ -399,7 +399,60 @@ footer{
     background:#000;
 }
 
-@media (max-width: 768px){
+@media screen and (max-width: 768px) {
+
+    header {
+        padding: 15px 5px !important;
+    }
+
+    .navbar {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .menu {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+
+        justify-content: space-around !important;
+        align-items: center !important;
+
+        width: 100% !important;
+
+        gap: 0 !important;
+    }
+
+    .menu li {
+        display: flex !important;
+        flex: 1 !important;
+
+        width: auto !important;
+    }
+
+    .menu a,
+    .menu button {
+        display: flex !important;
+
+        justify-content: center !important;
+        align-items: center !important;
+
+        width: 100% !important;
+        min-height: 50px !important;
+
+        padding: 5px 3px !important;
+
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+
+        text-align: center !important;
+    }
+
+    /* Eliminar el efecto que agranda el menú */
+    .menu:hover {
+        transform: none !important;
+    }
 
     body{
         width: 100%;
@@ -421,21 +474,6 @@ footer{
     .titulo{
         font-size: 26px;
         text-align: center;
-    }
-
-    /* MENU HORIZONTAL */
-    .menu{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        gap: 5px;
-    }
-
-    .menu li{
-        width: auto;
-        flex: 1;
     }
 
     .menu a,
