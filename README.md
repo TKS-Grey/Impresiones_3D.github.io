@@ -1,6 +1,6 @@
 PROYECTO The Makers - OBJETIVOS Y PROPÓSITO
 
-                    ![Logo The_Makers](https://github.com/TKS-Grey/Impresiones_3D.github.io/blob/TKS-Grey-patch-1/Logo_The-Makers.png?raw=true)
+<img width="850" alt="Logo The Makers" src:"https://github.com/TKS-Grey/Impresiones_3D.github.io/blob/TKS-Grey-patch-1/Logo_The-Makers.png?raw=true">
     
 Objetivo General
 Nuestro proyecto Makers tiene como fin atraer y captar a nuestro público objetivo, conformado por estudiantes de enseñanza media y empresas externas , creando un ecosistema de innovación y emprendimiento que potencia el talento técnico disponible.
