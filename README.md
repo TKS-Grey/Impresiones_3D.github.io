@@ -1,4 +1,4 @@
-PROYECTO MAKERS - OBJETIVOS Y PROPÓSITO
+PROYECTO The Makers - OBJETIVOS Y PROPÓSITO
 
 Objetivo General
 Nuestro proyecto Makers tiene como fin atraer y captar a nuestro público objetivo, conformado por estudiantes de enseñanza media y empresas externas , creando un ecosistema de innovación y emprendimiento que potencia el talento técnico disponible.
