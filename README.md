@@ -1,9 +1,9 @@
 PROYECTO MAKERS - OBJETIVOS Y PROPÓSITO
 
-.Objetivo General
+Objetivo General
 Nuestro proyecto Makers tiene como fin atraer y captar a nuestro público objetivo, conformado por estudiantes de enseñanza media y empresas externas , creando un ecosistema de innovación y emprendimiento que potencia el talento técnico disponible.
 
-.Objetivo Principal: Impulsar la Formación Técnica Profesional
+Objetivo Principal: Impulsar la Formación Técnica Profesional
 Sin embargo, nuestro objetivo principal y prioritario es incentivar y apoyar a los estudiantes de cursos menores del Colegio Arturo Matte Larraín , para que:
 
 Reconozcan el valor de la formación Técnico Profesional (TP)
