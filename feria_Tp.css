@@ -399,99 +399,81 @@ footer{
     background:#000;
 }
 
-@media screen and (max-width: 768px) {
+/* =========================
+   DISEÑO PARA TELEFONOS
+========================= */
 
-    header {
-        padding: 15px 5px !important;
-    }
+@media (max-width: 768px) {
 
-    .navbar {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-
-    .menu {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-
-        justify-content: space-around !important;
-        align-items: center !important;
-
-        width: 100% !important;
-
-        gap: 0 !important;
-    }
-
-    .menu li {
-        display: flex !important;
-        flex: 1 !important;
-
-        width: auto !important;
-    }
-
-    .menu a,
-    .menu button {
-        display: flex !important;
-
-        justify-content: center !important;
-        align-items: center !important;
-
-        width: 100% !important;
-        min-height: 50px !important;
-
-        padding: 5px 3px !important;
-
-        font-size: 11px !important;
-        line-height: 1.2 !important;
-
-        text-align: center !important;
-    }
-
-    /* Eliminar el efecto que agranda el menú */
-    .menu:hover {
-        transform: none !important;
-    }
-
-    body{
-        width: 100%;
-        overflow-x: hidden;
-    }
-
+    /* HEADER */
     header{
-        padding: 15px 10px;
+        padding: 15px 5px;
     }
 
     /* NAVBAR */
     .navbar{
+        display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         gap: 10px;
     }
 
     /* TITULO */
     .titulo{
-        font-size: 26px;
+        font-size: 28px;
+        width: 100%;
         text-align: center;
     }
 
+    /* MENU */
+    .menu{
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between;
+        align-items: stretch;
+
+        width: 100%;
+        gap: 0;
+
+        list-style: none;
+    }
+
+    /* CADA OPCION */
+    .menu li{
+        display: block;
+        flex: 1 1 25%;
+        width: 25%;
+        min-width: 0;
+    }
+
+    /* BOTONES Y LINKS */
     .menu a,
     .menu button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         width: 100%;
-        height: 100%;
-        padding: 10px 5px;
-        font-size: 13px;
-        text-align: center;
+        min-height: 55px;
+
+        padding: 5px 2px;
+
+        font-size: 11px;
         line-height: 1.2;
+        text-align: center;
+
+        white-space: normal;
     }
 
+    /* QUITAR EFECTO DE AGRANDAR */
     .menu:hover{
         transform: none;
     }
 
-    /* CONTENIDO */
 
+    /* CONTENIDO */
     .centroa{
         width: 100%;
         margin: 20px auto;
@@ -514,8 +496,8 @@ footer{
         line-height: 1.6;
     }
 
-    /* IMAGENES */
 
+    /* IMAGENES */
     .repe{
         flex-direction: column;
         align-items: center;
@@ -532,8 +514,9 @@ footer{
         max-width: 100%;
     }
 
-    /* FORMULARIO */
 
+    /* FORMULARIO */
+    .contenedorbase,
     .rojito{
         width: 100%;
         margin: 30px auto;
@@ -550,6 +533,8 @@ footer{
         width: 100%;
     }
 
+
+    /* REDES */
     .redes{
         width: 100%;
         margin: 0;
