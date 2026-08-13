@@ -3,20 +3,10 @@ PROYECTO The Makers - OBJETIVOS Y PROPÓSITO
 <img width="831" height="831" alt="Image" src="https://github.com/user-attachments/assets/0e4b4e17-9ec8-4fa2-87c1-f30d4c52bfa2" />
     
 Objetivo General
-Nuestro proyecto Makers tiene como fin atraer y captar a nuestro público objetivo, conformado por estudiantes de enseñanza media y empresas externas , creando un ecosistema de innovación y emprendimiento que potencia el talento técnico disponible.
+Atraer y captar a las personas que les interesen las figuras, o directamente las impresiones en 3D.
 
-Objetivo Principal: Impulsar la Formación Técnica Profesional
-Sin embargo, nuestro objetivo principal y prioritario es incentivar y apoyar a los estudiantes de cursos menores del Colegio Arturo Matte Larraín , para que:
-
-Reconozcan el valor de la formación Técnico Profesional (TP)
-
-Sensibilizarlos sobre las oportunidades reales que ofrece una carrera técnica
-Mostrarles que la educación TP no es una opción "de segunda categoría", sino una ruta profesional con alto potencial laboral
-Desarrollen conciencia sobre su futuro académico y laboral
-
-Ayudarles a tomar decisiones informadas sobre su especialización
-Motivarles a considerar seriamente el camino técnico profesional como opción viable
-Generen interés en proyectos reales y prácticos.
+Objetivo Principal: Atraer mas estudiantes la al electivo de Tp (Técnico Profesiona)
+Hacer de incentivo para que se motiven a escoger la especialidad de TP.
 
 Exponer a los estudiantes menores a desafíos técnicos concretos
 Permitirles experimentar con tecnologías y metodologías profesionales.
@@ -32,3 +22,7 @@ El proyecto actúa como un puente entre:
 .Educación formal (colegio)
 .Mundo profesional (empresas externas)
 .Innovación y emprendimiento (Makers)
+
+
+Aqui una pequeña muestra de cómo se ve nuestra pagina 
+<img width="739" height="385" alt="Image" src="https://github.com/user-attachments/assets/a4bc8290-bbf6-4d58-8c1c-bf7abd45ccb5" />
