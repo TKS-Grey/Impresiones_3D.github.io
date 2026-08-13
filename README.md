@@ -25,4 +25,4 @@ El proyecto actúa como un puente entre:
 
 
 Aqui una pequeña muestra de cómo se ve nuestra pagina 
-<img width="760" height="388" alt="Image" src="https://github.com/user-attachments/assets/878c9c56-1098-4dd5-a826-1e74b7473047" />
+<img width="720" height="368" alt="Image" src="https://github.com/user-attachments/assets/8a3e6031-b17f-4a41-a49a-c4ee4dd139f8" />
