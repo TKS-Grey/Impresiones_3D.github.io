@@ -1,6 +1,6 @@
 PROYECTO The Makers - OBJETIVOS Y PROPÓSITO
 
-<img width="831" height="831" alt="Image" src="https://github.com/user-attachments/assets/0e4b4e17-9ec8-4fa2-87c1-f30d4c52bfa2" />
+<img width="800" height="800" alt="Image" src="https://github.com/user-attachments/assets/0e4b4e17-9ec8-4fa2-87c1-f30d4c52bfa2" />
     
 Objetivo General
 Atraer y captar a las personas que les interesen las figuras, o directamente las impresiones en 3D.
@@ -25,4 +25,4 @@ El proyecto actúa como un puente entre:
 
 
 Aqui una pequeña muestra de cómo se ve nuestra pagina 
-<img width="739" height="385" alt="Image" src="https://github.com/user-attachments/assets/a4bc8290-bbf6-4d58-8c1c-bf7abd45ccb5" />
+<img width="760" height="388" alt="Image" src="https://github.com/user-attachments/assets/878c9c56-1098-4dd5-a826-1e74b7473047" />
