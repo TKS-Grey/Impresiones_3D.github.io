@@ -1,0 +1,139 @@
+body{
+    background: #1e222a;
+    color: #e0e6ed;
+}
+
+header{
+    background: #253342;
+}
+
+.titulo:hover{
+    color: #b8e1ff;
+    text-shadow: 0 0 10px #52796f;
+}
+
+.menu a,
+.menu button{
+    color: #e0e6ed;
+}
+
+.menu a:hover,
+.menu button:hover{
+    color: #b8e1ff;
+}
+
+.menu:hover{
+    color: #b8e1ff;
+    text-shadow: 0 0 10px #52796f;
+}
+
+.sub{
+    background: #2d3748;
+    color: #e0e6ed;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.sub a{
+    color: #b8e1ff;
+}
+
+.sub a:hover{
+    background: #3a4a5e;
+}
+
+.co{
+    background: #28303d;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.co h1{
+    color: #b8e1ff;
+}
+
+.co p{
+    color: #c5d1de;
+}
+
+.contenedorbase{
+    background: #232a34;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border-top: 6px solid #4a6fa5;
+}
+
+.contenedorbase h2{
+    color: #b8e1ff;
+}
+
+.imagen,
+.long-imagen{
+    border: 2px solid #4a6fa5;
+}
+
+.sube{
+    background: #4a6fa5;
+    color: #ffffff;
+}
+
+.sube:hover{
+    background: #3b5984;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nombe span{
+    color: #b8e1ff;
+}
+
+.nombe input,
+.nombe select,
+.nombe textarea{
+    background: #1e242d;
+    border: 2px solid #4a5568;
+    color: #e0e6ed;
+}
+
+.nombe input:focus,
+.nombe select:focus,
+.nombe textarea:focus{
+    border-color: #7b9acc;
+    box-shadow: 0 0 10px rgba(123, 154, 204, 0.3);
+}
+
+.soli{
+    color: #b8e1ff;
+}
+
+.difuminado{
+    color: #a0aec0;
+}
+
+.nada{
+    background: #253342;
+}
+
+.introduccion{
+    background-color: #253342;
+    color: #ffffff;
+}
+
+.red-btn{
+    background: #4a6fa5;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.red-btn:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.instagram:hover{
+    background:linear-gradient(
+        45deg,
+        #feda75,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+}
+
+.twitter:hover{
+    background:#000;
+}
