@@ -24,5 +24,5 @@ El proyecto actúa como un puente entre:
 .Innovación y emprendimiento (Makers)
 
 
-Aqui una pequeña muestra de cómo se ve nuestra pagina <span style="color: #0969DA;">AHORA con modo oscuro</span> 
+Aqui una pequeña muestra de cómo se ve nuestra pagina $${\color{red}Ahora en modo oscuro}$$ 
 <img width="1887" height="911" alt="Image" src="https://github.com/user-attachments/assets/25e120d3-6aab-4be3-a6c8-74d9f9b36a62" />
