@@ -1,4 +1,4 @@
-PROYECTO The Makers - OBJETIVOS Y PROPÓSITO
+PROYECTO $${\color{yellow}\text{The Makers}}$$ 
 
 <img width="800" height="800" alt="Image" src="https://github.com/user-attachments/assets/0e4b4e17-9ec8-4fa2-87c1-f30d4c52bfa2" />
     
@@ -24,5 +24,5 @@ El proyecto actúa como un puente entre:
 .Innovación y emprendimiento (Makers)
 
 
-Aqui una pequeña muestra de cómo se ve nuestra pagina $${\color{blue}\text{Ahora en modo oscuro}}$$ 
+Aqui una pequeña muestra de cómo se ve nuestra pagina $${\color{blue}\text{Ahora en modo oscuro}}$$
 <img width="1887" height="911" alt="Image" src="https://github.com/user-attachments/assets/25e120d3-6aab-4be3-a6c8-74d9f9b36a62" />
