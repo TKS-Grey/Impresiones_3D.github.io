@@ -7,8 +7,8 @@
 
     <link rel="stylesheet" href="feria_Tp.css?v=999">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
-    <script src="nosexd.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7620487903856300"
+     crossorigin="anonymous"></script>
 </head>
     <!--Socios, roles;
         Diseño de la pagina: Baltazar Gonzalez y Victor Uribe
@@ -49,6 +49,31 @@
                 </li>
                 <li class="dropdown">
                     <button id="btnModoOscuro">Modo Oscuro</button>
+                </li>
+                <li class="login-container">
+                    <button id="btnAbrirLogin" class="btn-login">
+                        Crear cuenta o iniciar sesión
+                    </button>
+                    <div class="login" id="menuLogin">
+                        <h2>Iniciar sesión</h2>
+                        <input type="text" id="nombre" placeholder="Nombre">
+                        <input type="text" id="apellido" placeholder="Primer apellido">
+                        <input type="email" id="email" placeholder="Correo electrónico">
+                        <input type="password" id="password" placeholder="Contraseña">
+
+                        <button id="btnLogin">
+                            Iniciar sesión
+                        </button>
+                        <button id="btnRegistro">
+                            Crear cuenta
+                        </button>
+                        <p id="mensaje"></p>
+                    </div>
+                </li>
+                <li>
+                    <li id="historialItem" style="display: none;">
+                        <a href="historial.html">Historial</a>
+                    </li>
                 </li>
             </ul>
         </nav>
@@ -181,5 +206,7 @@
             </a>
         </div>
     </footer>
+    <script src="nosexd.js"></script>
+    <script type="module" src="login.js"></script>
 </body>
 </html>
