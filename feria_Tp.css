@@ -37,7 +37,7 @@ header{
 
 .titulo:hover{
     color:#90e0ef;
-    transform: scale(1.05);
+    transform: scale(1.15);
     text-shadow: 0 0 10px #73bce2;
 }
 
@@ -52,7 +52,6 @@ a:visited{
 .XD{
     color:white;
     font-size: 24px;
-    transition: all 0.4s ease;
 }
 
 .menu{
@@ -60,7 +59,6 @@ a:visited{
     display:flex;
     cursor: default;
     gap:10px;
-    transition: all 0.4s ease;
     font-weight: bolder;
 }
 
@@ -77,17 +75,6 @@ a:visited{
     font-family:inherit;
     font-weight:bold;
     transition:0.3s;
-}
-
-.menu a:hover,
-.menu button:hover{
-    color:#90e0ef;
-}
-
-.menu:hover{
-    color:#90e0ef;
-    transform: scale(1.2);
-    text-shadow: 0 0 10px #74bce2;
 }
 
 .menu li{
@@ -244,11 +231,6 @@ footer{
     margin-top:15px;
 }
 
-.sube:hover{
-    background:#2b5f7d;
-    transform:translateY(-2px);
-    box-shadow:0 8px 15px rgba(0,0,0,.15);
-}
 
 .nombe{
     display:flex;
@@ -399,6 +381,99 @@ footer{
     background:#000;
 }
 
+.login-container{
+    position:relative;
+}
+
+.btn-login{
+    background-color:#B8E3E9;
+    color:#3D5A73;
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-login:hover{
+    background-color:#90D5DF;
+    transform:scale(1.05);
+}
+
+.login {
+    position: absolute;
+    top: calc(100% - 5px);
+    right: 0;
+    width: 380px;
+    min-height: 150px;
+    padding: 25px;
+    background-color: #FFFDFB;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.login::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+}
+
+.login.mostrar{
+    display:flex;
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #B8E3E9;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    background-color: white;
+    color: #333;
+}
+
+.login input:focus {
+    border-color: #5A6C8C;
+}
+
+.login button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #B8E3E9;
+    color: #3D5A73;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#mensaje {
+    text-align: center;
+    margin: 5px 0 0;
+    color: #3D5A73;
+}
+
+.login h2 {
+  color: #3D5A73;
+  position: static;
+  margin: 0 0 10px;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: center;
+  font-size: 20px;
+}
+
 /* =========================
    DISEÑO PARA TELEFONOS
 ========================= */
@@ -467,13 +542,6 @@ footer{
         white-space: normal;
     }
 
-    /* QUITAR EFECTO DE AGRANDAR */
-    .menu:hover{
-        transform: none;
-    }
-
-
-    /* CONTENIDO */
     .centroa{
         width: 100%;
         margin: 20px auto;
@@ -496,8 +564,6 @@ footer{
         line-height: 1.6;
     }
 
-
-    /* IMAGENES */
     .repe{
         flex-direction: column;
         align-items: center;
@@ -514,8 +580,6 @@ footer{
         max-width: 100%;
     }
 
-
-    /* FORMULARIO */
     .contenedorbase,
     .rojito{
         width: 100%;
@@ -533,8 +597,6 @@ footer{
         width: 100%;
     }
 
-
-    /* REDES */
     .redes{
         width: 100%;
         margin: 0;
