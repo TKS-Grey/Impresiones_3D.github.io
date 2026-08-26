@@ -137,3 +137,53 @@ header{
 .twitter:hover{
     background:#000;
 }
+
+/* =========================
+   LOGIN / REGISTRO - MODO OSCURO
+========================= */
+
+.btn-login {
+    background-color: #4a6fa5;
+    color: #e0e6ed;
+}
+
+.btn-login:hover {
+    background-color: #5d83bd;
+}
+
+.login {
+    background-color: #232a34;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+.login h2 {
+    color: #b8e1ff;
+}
+
+.login input {
+    background-color: #1e242d;
+    border: 1px solid #4a5568;
+    color: #e0e6ed;
+}
+
+.login input::placeholder {
+    color: #a0aec0;
+}
+
+.login input:focus {
+    border-color: #7b9acc;
+    box-shadow: 0 0 10px rgba(123, 154, 204, 0.3);
+}
+
+.login button {
+    background-color: #4a6fa5;
+    color: #ffffff;
+}
+
+.login button:hover {
+    background-color: #5d83bd;
+}
+
+#mensaje {
+    color: #b8e1ff;
+}
