@@ -153,7 +153,6 @@ main{
 #formEntrega input:focus,
 #formEntrega select:focus{
     border-color:#5d9bb7;
-    box-shadow:0 0 5px rgba(93,155,183,.3);
 }
 
 #formEntrega input[type="file"]{
@@ -167,20 +166,14 @@ main{
 
 .btn-agregar{
     grid-column:1 / -1;
-
     padding:13px;
-
     border:none;
     border-radius:10px;
-
     background:#3b728f;
     color:white;
-
     font-size:16px;
     font-weight:bold;
-
     cursor:pointer;
-
     transition:.3s;
 }
 
@@ -269,6 +262,16 @@ main{
     margin-bottom:7px;
 }
 
+.archivo-modelo{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 12px;
+    background:#315c73;
+    color:#ffffff !important;
+    border-radius:8px;
+    font-weight:bold;
+}
+
 .estado{
     display:inline-block;
     padding:7px 14px;
@@ -325,10 +328,6 @@ footer{
 
     #formEntrega{
         grid-template-columns:1fr;
-    }
-
-    #formEntrega label{
-        margin-top:5px;
     }
 
     .admin-panel,
