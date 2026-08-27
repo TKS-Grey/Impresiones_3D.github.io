@@ -474,18 +474,81 @@ footer{
   font-size: 20px;
 }
 
+#archivoFigura{
+    width:100%;
+    padding:12px;
+
+    background:#ffffff;
+    color:#333333;
+
+    border:2px solid #d6d6d6;
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+#archivoFigura:hover{
+    border-color:#3b728f;
+}
+
+#archivoFigura::file-selector-button{
+    background:#3b728f;
+    color:#ffffff;
+
+    border:none;
+    border-radius:8px;
+
+    padding:8px 12px;
+
+    margin-right:10px;
+
+    cursor:pointer;
+}
+
+#archivoFigura::file-selector-button:hover{
+    background:#2d617c;
+}
+
+small{
+    color:#666666;
+    display:block;
+    margin-top:5px;
+}
+
+
+body.modo-oscuro #archivoFigura{
+    background:#1e242d;
+    color:#e0e6ed;
+    border-color:#4a5568;
+}
+
+body.modo-oscuro #archivoFigura:hover{
+    border-color:#7b9acc;
+}
+
+body.modo-oscuro #archivoFigura::file-selector-button{
+    background:#4a6fa5;
+    color:#ffffff;
+}
+
+body.modo-oscuro #archivoFigura::file-selector-button:hover{
+    background:#5d83bd;
+}
+
+body.modo-oscuro small{
+    color:#a0aec0;
+}
+
 /* =========================
    DISEÑO PARA TELEFONOS
 ========================= */
 
 @media (max-width: 768px) {
 
-    /* HEADER */
     header{
         padding: 15px 5px;
     }
 
-    /* NAVBAR */
     .navbar{
         display: flex;
         flex-direction: column;
@@ -515,7 +578,6 @@ footer{
         list-style: none;
     }
 
-    /* CADA OPCION */
     .menu li{
         display: block;
         flex: 1 1 25%;
@@ -523,7 +585,6 @@ footer{
         min-width: 0;
     }
 
-    /* BOTONES Y LINKS */
     .menu a,
     .menu button{
         display: flex;
