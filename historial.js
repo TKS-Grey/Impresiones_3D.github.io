@@ -1,9 +1,11 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
 
 import {
     getAuth,
     onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 
 import {
     getFirestore,
@@ -12,32 +14,25 @@ import {
     getDocs,
     query,
     where,
-    orderBy,
     serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 
 import {
     getStorage,
     ref,
     uploadBytes,
     getDownloadURL
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-storage.js";
 
 
 const firebaseConfig = {
-
-    apiKey: "TU_API_KEY",
-
-    authDomain: "TU_PROYECTO.firebaseapp.com",
-
-    projectId: "TU_PROJECT_ID",
-
-    storageBucket: "TU_PROYECTO.firebasestorage.app",
-
-    messagingSenderId: "TU_MESSAGING_SENDER_ID",
-
-    appId: "TU_APP_ID"
-
+    apiKey:"AIzaSyC8hIsitvjMYaD9L1Gp_1FdVVrAV6jWP4A",
+    authDomain:"impresiones-3d-aml.firebaseapp.com",
+    projectId:"impresiones-3d-aml",
+    storageBucket:"impresiones-3d-aml.firebasestorage.app",
+    messagingSenderId:"61594822515",
+    appId:"1:61594822515:web:1dc3e1b35ca02bce904706",
+    measurementId:"G-E1L15BXDTG"
 };
 
 
@@ -50,40 +45,50 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 
 
-/*
-    CORREOS QUE PUEDEN ADMINISTRAR ENTREGAS
-*/
-
 const ADMIN_EMAILS = [
-    "TU_CORREO_DE_ADMIN@ejemplo.com"
+    "tomas.lillo.luna@alumnos.sip.cl",
+    "baltazar.gonzalez.ugarte@alumnos.sip.cl"
 ];
 
 
-const panelAdmin = document.getElementById("panelAdmin");
+const panelAdmin =
+    document.getElementById("panelAdmin");
 
-const usuarioNombre = document.getElementById("usuarioNombre");
+const usuarioNombre =
+    document.getElementById("usuarioNombre");
 
-const usuarioCorreo = document.getElementById("usuarioCorreo");
+const usuarioCorreo =
+    document.getElementById("usuarioCorreo");
 
-const entregas = document.getElementById("entregas");
+const entregas =
+    document.getElementById("entregas");
 
-const mensajeHistorial = document.getElementById("mensajeHistorial");
+const mensajeHistorial =
+    document.getElementById("mensajeHistorial");
 
-const formEntrega = document.getElementById("formEntrega");
+const formEntrega =
+    document.getElementById("formEntrega");
 
-const usuarioEntrega = document.getElementById("usuarioEntrega");
+const usuarioEntrega =
+    document.getElementById("usuarioEntrega");
 
-const pedido = document.getElementById("pedido");
+const pedidoEntrega =
+    document.getElementById("pedidoEntrega");
 
-const fotoEntrega = document.getElementById("fotoEntrega");
+const fotoEntrega =
+    document.getElementById("fotoEntrega");
 
-const fechaEntrega = document.getElementById("fechaEntrega");
+const fechaEntrega =
+    document.getElementById("fechaEntrega");
 
-const horaEntrega = document.getElementById("horaEntrega");
+const horaEntrega =
+    document.getElementById("horaEntrega");
 
-const mensajeAdmin = document.getElementById("mensajeAdmin");
+const mensajeAdmin =
+    document.getElementById("mensajeAdmin");
 
-const btnAgregar = document.querySelector(".btn-agregar");
+const btnAgregar =
+    document.querySelector(".btn-agregar");
 
 
 panelAdmin.style.display = "none";
@@ -138,16 +143,15 @@ async function cargarUsuarios(){
 
     try {
 
-        const usuariosSnapshot =
+        const snapshot =
             await getDocs(
                 collection(db, "usuarios")
             );
 
 
-        usuariosSnapshot.forEach((doc) => {
+        snapshot.forEach((doc) => {
 
             const data = doc.data();
-
 
             const option =
                 document.createElement("option");
@@ -159,7 +163,7 @@ async function cargarUsuarios(){
             option.textContent =
                 data.nombre ||
                 data.email ||
-                doc.id;
+                "Usuario";
 
 
             option.dataset.email =
@@ -171,16 +175,85 @@ async function cargarUsuarios(){
         });
 
 
-    } catch (error) {
+    } catch(error) {
 
         console.error(error);
 
         mensajeAdmin.textContent =
-            "No se pudieron cargar los usuarios.";
+            "❌ No se pudieron cargar los usuarios.";
 
     }
 
 }
+
+
+usuarioEntrega.addEventListener(
+    "change",
+    async () => {
+
+        const usuarioId =
+            usuarioEntrega.value;
+
+
+        pedidoEntrega.innerHTML = `
+            <option value="">
+                Selecciona un pedido
+            </option>
+        `;
+
+
+        if (!usuarioId) return;
+
+
+        try {
+
+            const q = query(
+                collection(db, "pedidos"),
+                where("usuarioId", "==", usuarioId)
+            );
+
+
+            const snapshot =
+                await getDocs(q);
+
+
+            snapshot.forEach((doc) => {
+
+                const data = doc.data();
+
+
+                const option =
+                    document.createElement("option");
+
+
+                option.value = doc.id;
+
+
+                option.textContent =
+                    data.figura ||
+                    "Pedido";
+
+
+                option.dataset.pedido =
+                    data.figura || "";
+
+
+                pedidoEntrega.appendChild(option);
+
+            });
+
+
+        } catch(error) {
+
+            console.error(error);
+
+            mensajeAdmin.textContent =
+                "❌ No se pudieron cargar los pedidos.";
+
+        }
+
+    }
+);
 
 
 async function cargarEntregas(user){
@@ -222,14 +295,14 @@ async function cargarEntregas(user){
         snapshot.forEach((doc) => {
 
             lista.push({
-                id: doc.id,
+                id:doc.id,
                 ...doc.data()
             });
 
         });
 
 
-        lista.sort((a, b) => {
+        lista.sort((a,b) => {
 
             const fechaA =
                 new Date(
@@ -253,12 +326,12 @@ async function cargarEntregas(user){
         });
 
 
-    } catch (error) {
+    } catch(error) {
 
         console.error(error);
 
         mensajeHistorial.textContent =
-            "Ocurrió un error al cargar las entregas.";
+            "❌ Ocurrió un error al cargar las entregas.";
 
     }
 
@@ -271,7 +344,8 @@ function mostrarEntrega(entrega){
         document.createElement("article");
 
 
-    tarjeta.className = "entrega";
+    tarjeta.className =
+        "entrega";
 
 
     tarjeta.innerHTML = `
@@ -285,8 +359,13 @@ function mostrarEntrega(entrega){
         <div class="info-entrega">
 
             <h3>
-                📦 ${escapeHTML(entrega.pedido)}
+                📦 ${escapeHTML(entrega.figura || entrega.pedido || "Pedido")}
             </h3>
+
+            <p>
+                📏 <strong>Medida:</strong>
+                ${escapeHTML(entrega.medida || "No especificada")}
+            </p>
 
             <p>
                 📅 <strong>Fecha:</strong>
@@ -298,12 +377,30 @@ function mostrarEntrega(entrega){
                 ${escapeHTML(entrega.hora)}
             </p>
 
+            ${
+                entrega.archivoURL
+                ?
+                `
+                <a
+                    class="archivo-modelo"
+                    href="${entrega.archivoURL}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    📎 Ver modelo
+                </a>
+                `
+                :
+                ""
+            }
+
+            <br>
+
             <span class="estado">
                 Entregado
             </span>
 
         </div>
-
     `;
 
 
@@ -326,7 +423,7 @@ formEntrega.addEventListener(
         if (!admin) {
 
             mensajeAdmin.textContent =
-                "No hay una sesión iniciada.";
+                "❌ No hay una sesión iniciada.";
 
             return;
 
@@ -340,11 +437,19 @@ formEntrega.addEventListener(
         ) {
 
             mensajeAdmin.textContent =
-                "No tienes permisos de administrador.";
+                "❌ No tienes permisos de administrador.";
 
             return;
 
         }
+
+
+        const usuarioId =
+            usuarioEntrega.value;
+
+
+        const pedidoId =
+            pedidoEntrega.value;
 
 
         const usuarioSeleccionado =
@@ -353,22 +458,38 @@ formEntrega.addEventListener(
             ];
 
 
-        const usuarioId =
-            usuarioEntrega.value;
+        const pedidoSeleccionado =
+            pedidoEntrega.options[
+                pedidoEntrega.selectedIndex
+            ];
 
 
         const usuarioEmail =
             usuarioSeleccionado.dataset.email;
 
 
+        const figura =
+            pedidoSeleccionado.dataset.pedido;
+
+
         const archivo =
             fotoEntrega.files[0];
+
+
+        if (!usuarioId || !pedidoId) {
+
+            mensajeAdmin.textContent =
+                "❌ Selecciona un usuario y un pedido.";
+
+            return;
+
+        }
 
 
         if (!archivo) {
 
             mensajeAdmin.textContent =
-                "Selecciona una foto.";
+                "❌ Selecciona una foto.";
 
             return;
 
@@ -378,7 +499,7 @@ formEntrega.addEventListener(
         if (!archivo.type.startsWith("image/")) {
 
             mensajeAdmin.textContent =
-                "El archivo debe ser una imagen.";
+                "❌ El archivo debe ser una imagen.";
 
             return;
 
@@ -388,7 +509,7 @@ formEntrega.addEventListener(
         if (archivo.size > 10 * 1024 * 1024) {
 
             mensajeAdmin.textContent =
-                "La imagen no puede superar los 10 MB.";
+                "❌ La imagen no puede superar los 10 MB.";
 
             return;
 
@@ -429,27 +550,66 @@ formEntrega.addEventListener(
                 );
 
 
+            const pedidoSnapshot =
+                await getDocs(
+                    query(
+                        collection(db, "pedidos"),
+                        where(
+                            "__name__",
+                            "==",
+                            pedidoId
+                        )
+                    )
+                );
+
+
+            let medida = "";
+
+
+            pedidoSnapshot.forEach((doc) => {
+
+                medida =
+                    doc.data().medida || "";
+
+            });
+
+
             await addDoc(
                 collection(db, "entregas"),
                 {
 
-                    usuarioId: usuarioId,
+                    usuarioId:
+                        usuarioId,
 
-                    usuarioEmail: usuarioEmail,
+                    usuarioEmail:
+                        usuarioEmail,
 
-                    pedido: pedido.value,
+                    pedidoId:
+                        pedidoId,
 
-                    fotoURL: fotoURL,
+                    figura:
+                        figura,
 
-                    fotoPath: ruta,
+                    medida:
+                        medida,
 
-                    fecha: fechaEntrega.value,
+                    fotoURL:
+                        fotoURL,
 
-                    hora: horaEntrega.value,
+                    fotoPath:
+                        ruta,
 
-                    creadoPor: admin.email,
+                    fecha:
+                        fechaEntrega.value,
 
-                    creadoEn: serverTimestamp()
+                    hora:
+                        horaEntrega.value,
+
+                    creadoPor:
+                        admin.email,
+
+                    creadoEn:
+                        serverTimestamp()
 
                 }
             );
@@ -461,8 +621,14 @@ formEntrega.addEventListener(
 
             formEntrega.reset();
 
+            pedidoEntrega.innerHTML = `
+                <option value="">
+                    Selecciona un pedido
+                </option>
+            `;
 
-        } catch (error) {
+
+        } catch(error) {
 
             console.error(error);
 
@@ -479,15 +645,44 @@ formEntrega.addEventListener(
 );
 
 
+const btnModoOscuro =
+    document.getElementById("btnModoOscuro");
+
+
+if(btnModoOscuro){
+
+    btnModoOscuro.addEventListener(
+        "click",
+        () => {
+
+            const actual =
+                document.body.classList.toggle(
+                    "tema-claro"
+                );
+
+
+            btnModoOscuro.textContent =
+                actual
+                ?
+                "Modo Oscuro"
+                :
+                "Modo Claro";
+
+        }
+    );
+
+}
+
+
 function escapeHTML(text){
 
-    if (!text) return "";
+    if(!text) return "";
 
-    return text
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
+    return String(text)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
 
 }
