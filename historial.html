@@ -45,75 +45,72 @@
         <section id="panelAdmin" class="admin-panel">
 
             <h2>Administración de entregas</h2>
-
             <form id="formEntrega">
+                <div class="campo">
+                    <label for="usuarioEntrega">
+                        Usuario
+                    </label>
+                    <select id="usuarioEntrega" required>
+                        <option value="">
+                            Selecciona un usuario
+                        </option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="pedidoEntrega">
+                        Pedido
+                    </label>
 
-                <label for="usuarioEntrega">
-                    Usuario
-                </label>
+                    <select id="pedidoEntrega" required>
+                        <option value="">
+                            Selecciona un pedido
+                        </option>
+                    </select>
+                </div>
 
-                <select id="usuarioEntrega" required>
+                <div class="campo campo-completo">
+                    <label for="fotoEntrega">
+                        Foto del usuario junto a su pedido
+                    </label>
 
-                    <option value="">
-                        Selecciona un usuario
-                    </option>
+                    <input
+                        type="file"
+                        id="fotoEntrega"
+                        accept="image/*"
+                        required>
+                </div>
 
-                </select>
+                <div class="campo">
+                    <label for="fechaEntrega">
+                        Fecha de entrega
+                    </label>
 
-                <select id="pedidoEntrega" required>
-
-                    <option value="">
-                        Selecciona un pedido
-                    </option>
-
-                </select>
-
-
-                <label for="fotoEntrega">
-                    Foto del usuario junto a su pedido
-                </label>
-
-                <input
-                    type="file"
-                    id="fotoEntrega"
-                    accept="image/*"
-                    required
-                >
+                    <input
+                        type="date"
+                        id="fechaEntrega"
+                        required>
+                </div>
 
 
-                <label for="fechaEntrega">
-                    Fecha de entrega
-                </label>
+                <div class="campo">
+                    <label for="horaEntrega">
+                        Hora de entrega
+                    </label>
 
-                <input
-                    type="date"
-                    id="fechaEntrega"
-                    required
-                >
-
-
-                <label for="horaEntrega">
-                    Hora de entrega
-                </label>
-
-                <input
-                    type="time"
-                    id="horaEntrega"
-                    required
-                >
+                    <input
+                        type="time"
+                        id="horaEntrega"
+                        required>
+                </div>
 
 
                 <button type="submit" class="btn-agregar">
                     Agregar entrega
                 </button>
-
-            </form>
-
+                </form>
             <p id="mensajeAdmin"></p>
 
         </section>
-
-
         <section class="historial">
 
             <h2>Mis entregas</h2>
