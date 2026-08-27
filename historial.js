@@ -12,6 +12,8 @@ import {
     collection,
     addDoc,
     getDocs,
+    getDoc,
+    doc,
     query,
     where,
     serverTimestamp
@@ -25,16 +27,31 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-storage.js";
 
 
+// =========================================================
+// CONFIGURACIÓN DE FIREBASE
+// =========================================================
+
 const firebaseConfig = {
-    apiKey:"AIzaSyC8hIsitvjMYaD9L1Gp_1FdVVrAV6jWP4A",
-    authDomain:"impresiones-3d-aml.firebaseapp.com",
-    projectId:"impresiones-3d-aml",
-    storageBucket:"impresiones-3d-aml.firebasestorage.app",
-    messagingSenderId:"61594822515",
-    appId:"1:61594822515:web:1dc3e1b35ca02bce904706",
-    measurementId:"G-E1L15BXDTG"
+
+    apiKey: "AIzaSyC8hIsitvjMYaD9L1Gp_1FdVVrAV6jWP4A",
+
+    authDomain: "impresiones-3d-aml.firebaseapp.com",
+
+    projectId: "impresiones-3d-aml",
+
+    storageBucket: "impresiones-3d-aml.firebasestorage.app",
+
+    messagingSenderId: "61594822515",
+
+    appId: "1:61594822515:web:1dc3e1b35ca02bce904706",
+
+    measurementId: "G-E1L15BXDTG"
 };
 
+
+// =========================================================
+// INICIALIZAR FIREBASE
+// =========================================================
 
 const app = initializeApp(firebaseConfig);
 
@@ -45,11 +62,19 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 
 
+// =========================================================
+// ADMINISTRADORES
+// =========================================================
+
 const ADMIN_EMAILS = [
     "tomas.lillo.luna@alumnos.sip.cl",
     "baltazar.gonzalez.ugarte@alumnos.sip.cl"
 ];
 
+
+// =========================================================
+// ELEMENTOS HTML
+// =========================================================
 
 const panelAdmin =
     document.getElementById("panelAdmin");
@@ -90,49 +115,150 @@ const mensajeAdmin =
 const btnAgregar =
     document.querySelector(".btn-agregar");
 
+const btnModoOscuro =
+    document.getElementById("btnModoOscuro");
 
-panelAdmin.style.display = "none";
+
+// =========================================================
+// COMPROBAR ELEMENTOS IMPORTANTES
+// =========================================================
+
+if (!formEntrega) {
+    console.error(
+        "❌ No se encontró #formEntrega"
+    );
+}
+
+if (!usuarioEntrega) {
+    console.error(
+        "❌ No se encontró #usuarioEntrega"
+    );
+}
+
+if (!pedidoEntrega) {
+    console.error(
+        "❌ No se encontró #pedidoEntrega"
+    );
+}
 
 
-onAuthStateChanged(auth, async (user) => {
+// =========================================================
+// OCULTAR PANEL ADMIN AL INICIO
+// =========================================================
 
-    if (!user) {
+if (panelAdmin) {
+    panelAdmin.style.display = "none";
+}
 
-        window.location.href = "index.html";
 
+// =========================================================
+// AUTENTICACIÓN
+// =========================================================
+
+onAuthStateChanged(
+    auth,
+    async (user) => {
+
+        // -----------------------------------------
+        // NO HAY USUARIO
+        // -----------------------------------------
+
+        if (!user) {
+
+            window.location.href =
+                "index.html";
+
+            return;
+        }
+
+
+        // -----------------------------------------
+        // MOSTRAR DATOS DEL USUARIO
+        // -----------------------------------------
+
+        if (usuarioNombre) {
+
+            usuarioNombre.textContent =
+                "👤 " +
+                (
+                    user.displayName ||
+                    "Usuario"
+                );
+        }
+
+
+        if (usuarioCorreo) {
+
+            usuarioCorreo.textContent =
+                "📧 " +
+                (
+                    user.email ||
+                    ""
+                );
+        }
+
+
+        // -----------------------------------------
+        // COMPROBAR ADMIN
+        // -----------------------------------------
+
+        const emailUsuario =
+            (
+                user.email ||
+                ""
+            ).toLowerCase();
+
+        const esAdmin =
+            ADMIN_EMAILS.includes(
+                emailUsuario
+            );
+
+
+        // -----------------------------------------
+        // MOSTRAR PANEL ADMIN
+        // -----------------------------------------
+
+        if (esAdmin) {
+
+            if (panelAdmin) {
+
+                panelAdmin.style.display =
+                    "block";
+            }
+
+            await cargarUsuarios();
+
+        } else {
+
+            if (panelAdmin) {
+
+                panelAdmin.style.display =
+                    "none";
+            }
+        }
+
+
+        // -----------------------------------------
+        // CARGAR ENTREGAS
+        // -----------------------------------------
+
+        await cargarEntregas(user);
+    }
+);
+
+
+// =========================================================
+// CARGAR USUARIOS
+// =========================================================
+
+async function cargarUsuarios() {
+
+    if (!usuarioEntrega) {
         return;
     }
 
 
-    usuarioNombre.textContent =
-        "👤 " + (user.displayName || "Usuario");
-
-
-    usuarioCorreo.textContent =
-        "📧 " + user.email;
-
-
-    const esAdmin =
-        ADMIN_EMAILS.includes(
-            user.email.toLowerCase()
-        );
-
-
-    if (esAdmin) {
-
-        panelAdmin.style.display = "block";
-
-        await cargarUsuarios();
-
-    }
-
-
-    await cargarEntregas(user);
-
-});
-
-
-async function cargarUsuarios(){
+    // Limpiar selector
 
     usuarioEntrega.innerHTML = `
         <option value="">
@@ -145,544 +271,474 @@ async function cargarUsuarios(){
 
         const snapshot =
             await getDocs(
-                collection(db, "usuarios")
+                collection(
+                    db,
+                    "usuarios"
+                )
             );
 
 
-        snapshot.forEach((doc) => {
+        // No hay usuarios
 
-            const data = doc.data();
+        if (snapshot.empty) {
 
-            const option =
-                document.createElement("option");
+            if (mensajeAdmin) {
 
+                mensajeAdmin.textContent =
+                    "⚠️ No hay usuarios registrados.";
+            }
 
-            option.value = doc.id;
-
-
-            option.textContent =
-                data.nombre ||
-                data.email ||
-                "Usuario";
+            return;
+        }
 
 
-            option.dataset.email =
-                data.email || "";
+        // Agregar usuarios al selector
 
+        snapshot.forEach(
+            (usuarioDoc) => {
 
-            usuarioEntrega.appendChild(option);
-
-        });
-
-
-    } catch(error) {
-
-        console.error(error);
-
-        mensajeAdmin.textContent =
-            "❌ No se pudieron cargar los usuarios.";
-
-    }
-
-}
-
-
-usuarioEntrega.addEventListener(
-    "change",
-    async () => {
-
-        const usuarioId =
-            usuarioEntrega.value;
-
-
-        pedidoEntrega.innerHTML = `
-            <option value="">
-                Selecciona un pedido
-            </option>
-        `;
-
-
-        if (!usuarioId) return;
-
-
-        try {
-
-            const q = query(
-                collection(db, "pedidos"),
-                where("usuarioId", "==", usuarioId)
-            );
-
-
-            const snapshot =
-                await getDocs(q);
-
-
-            snapshot.forEach((doc) => {
-
-                const data = doc.data();
+                const data =
+                    usuarioDoc.data();
 
 
                 const option =
-                    document.createElement("option");
+                    document.createElement(
+                        "option"
+                    );
 
 
-                option.value = doc.id;
+                // ID del documento
 
+                option.value =
+                    usuarioDoc.id;
+
+
+                // Nombre visible
 
                 option.textContent =
-                    data.figura ||
-                    "Pedido";
+                    data.nombre ||
+                    data.email ||
+                    "Usuario";
 
 
-                option.dataset.pedido =
-                    data.figura || "";
+                // Guardar email
+
+                option.dataset.email =
+                    data.email ||
+                    "";
 
 
-                pedidoEntrega.appendChild(option);
+                usuarioEntrega.appendChild(
+                    option
+                );
+            }
+        );
 
-            });
+
+    } catch (error) {
+
+        console.error(
+            "Error cargando usuarios:",
+            error
+        );
 
 
-        } catch(error) {
-
-            console.error(error);
+        if (mensajeAdmin) {
 
             mensajeAdmin.textContent =
-                "❌ No se pudieron cargar los pedidos.";
-
+                "❌ No se pudieron cargar los usuarios: " +
+                error.message;
         }
-
     }
-);
+}
 
 
-async function cargarEntregas(user){
+// =========================================================
+// CUANDO SE SELECCIONA UN USUARIO
+// =========================================================
+
+if (usuarioEntrega) {
+
+    usuarioEntrega.addEventListener(
+        "change",
+        async () => {
+
+            const usuarioId =
+                usuarioEntrega.value;
+
+
+            // Limpiar pedidos
+
+            if (pedidoEntrega) {
+
+                pedidoEntrega.innerHTML = `
+                    <option value="">
+                        Selecciona un pedido
+                    </option>
+                `;
+            }
+
+
+            // Si no hay usuario seleccionado
+
+            if (!usuarioId) {
+                return;
+            }
+
+
+            try {
+
+                if (mensajeAdmin) {
+
+                    mensajeAdmin.textContent =
+                        "⏳ Cargando pedidos...";
+                }
+
+
+                // Buscar pedidos del usuario
+
+                const q =
+                    query(
+                        collection(
+                            db,
+                            "pedidos"
+                        ),
+                        where(
+                            "usuarioId",
+                            "==",
+                            usuarioId
+                        )
+                    );
+
+
+                const snapshot =
+                    await getDocs(q);
+
+
+                // No tiene pedidos
+
+                if (snapshot.empty) {
+
+                    if (mensajeAdmin) {
+
+                        mensajeAdmin.textContent =
+                            "⚠️ Este usuario no tiene pedidos.";
+                    }
+
+                    return;
+                }
+
+
+                // Agregar pedidos
+
+                snapshot.forEach(
+                    (pedidoDoc) => {
+
+                        const data =
+                            pedidoDoc.data();
+
+
+                        const option =
+                            document.createElement(
+                                "option"
+                            );
+
+
+                        // ID real del pedido
+
+                        option.value =
+                            pedidoDoc.id;
+
+
+                        // Nombre visible
+
+                        option.textContent =
+                            data.figura ||
+                            data.archivoNombre ||
+                            "Pedido";
+
+
+                        // Guardar figura
+
+                        option.dataset.pedido =
+                            data.figura ||
+                            "Pedido";
+
+
+                        pedidoEntrega.appendChild(
+                            option
+                        );
+                    }
+                );
+
+
+                if (mensajeAdmin) {
+
+                    mensajeAdmin.textContent =
+                        "";
+                }
+
+
+            } catch (error) {
+
+                console.error(
+                    "Error cargando pedidos:",
+                    error
+                );
+
+
+                if (mensajeAdmin) {
+
+                    mensajeAdmin.textContent =
+                        "❌ No se pudieron cargar los pedidos: " +
+                        error.message;
+                }
+            }
+        }
+    );
+}
+
+
+// =========================================================
+// CARGAR HISTORIAL DE ENTREGAS
+// =========================================================
+
+async function cargarEntregas(user) {
+
+    if (!entregas) {
+        return;
+    }
+
 
     entregas.innerHTML = "";
 
-    mensajeHistorial.textContent =
-        "Cargando entregas...";
+
+    if (mensajeHistorial) {
+
+        mensajeHistorial.textContent =
+            "⏳ Cargando entregas...";
+    }
 
 
     try {
 
-        const q = query(
-            collection(db, "entregas"),
-            where("usuarioId", "==", user.uid)
-        );
+        // Buscar entregas del usuario actual
+
+        const q =
+            query(
+                collection(
+                    db,
+                    "entregas"
+                ),
+                where(
+                    "usuarioId",
+                    "==",
+                    user.uid
+                )
+            );
 
 
         const snapshot =
             await getDocs(q);
 
 
+        // No existen entregas
+
         if (snapshot.empty) {
 
-            mensajeHistorial.textContent =
-                "No tienes entregas registradas.";
+            if (mensajeHistorial) {
+
+                mensajeHistorial.textContent =
+                    "No tienes entregas registradas.";
+            }
 
             return;
-
         }
 
 
-        mensajeHistorial.textContent = "";
+        if (mensajeHistorial) {
 
+            mensajeHistorial.textContent =
+                "";
+        }
+
+
+        // Crear lista
 
         const lista = [];
 
 
-        snapshot.forEach((doc) => {
+        snapshot.forEach(
+            (entregaDoc) => {
 
-            lista.push({
-                id:doc.id,
-                ...doc.data()
-            });
+                lista.push({
 
-        });
+                    id: entregaDoc.id,
+
+                    ...entregaDoc.data()
+                });
+            }
+        );
 
 
-        lista.sort((a,b) => {
+        // Ordenar de más reciente a más antigua
 
-            const fechaA =
-                new Date(
-                    `${a.fecha}T${a.hora}`
+        lista.sort(
+            (a, b) => {
+
+                const fechaA =
+                    new Date(
+                        `${a.fecha || "1970-01-01"}T${a.hora || "00:00"}`
+                    );
+
+                const fechaB =
+                    new Date(
+                        `${b.fecha || "1970-01-01"}T${b.hora || "00:00"}`
+                    );
+
+
+                return fechaB - fechaA;
+            }
+        );
+
+
+        // Mostrar entregas
+
+        lista.forEach(
+            (entrega) => {
+
+                mostrarEntrega(
+                    entrega
                 );
-
-            const fechaB =
-                new Date(
-                    `${b.fecha}T${b.hora}`
-                );
-
-            return fechaB - fechaA;
-
-        });
+            }
+        );
 
 
-        lista.forEach((entrega) => {
+    } catch (error) {
 
-            mostrarEntrega(entrega);
+        console.error(
+            "Error cargando entregas:",
+            error
+        );
 
-        });
 
+        if (mensajeHistorial) {
 
-    } catch(error) {
-
-        console.error(error);
-
-        mensajeHistorial.textContent =
-            "❌ Ocurrió un error al cargar las entregas.";
-
+            mensajeHistorial.textContent =
+                "❌ Ocurrió un error al cargar las entregas: " +
+                error.message;
+        }
     }
-
 }
 
 
-function mostrarEntrega(entrega){
+// =========================================================
+// MOSTRAR UNA ENTREGA
+// =========================================================
 
-    const tarjeta =
-        document.createElement("article");
+function mostrarEntrega(entrega) {
+    if (!entregas) {
+        return;
+    }
 
-
-    tarjeta.className =
-        "entrega";
-
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "entrega";
 
     tarjeta.innerHTML = `
-
         <img
             class="foto-entrega"
-            src="${entrega.fotoURL}"
+            src="${escapeHTML(entrega.fotoURL || "https://via.placeholder.com/150")}"
             alt="Foto de entrega"
         >
-
         <div class="info-entrega">
-
-            <h3>
-                📦 ${escapeHTML(entrega.figura || entrega.pedido || "Pedido")}
-            </h3>
-
-            <p>
-                📏 <strong>Medida:</strong>
-                ${escapeHTML(entrega.medida || "No especificada")}
-            </p>
-
-            <p>
-                📅 <strong>Fecha:</strong>
-                ${escapeHTML(entrega.fecha)}
-            </p>
-
-            <p>
-                🕐 <strong>Hora:</strong>
-                ${escapeHTML(entrega.hora)}
-            </p>
-
-            ${
-                entrega.archivoURL
-                ?
-                `
-                <a
-                    class="archivo-modelo"
-                    href="${entrega.archivoURL}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    📎 Ver modelo
-                </a>
-                `
-                :
-                ""
-            }
-
-            <br>
-
-            <span class="estado">
-                Entregado
-            </span>
-
+            <h3>📦 ${escapeHTML(entrega.figura || "Pedido")}</h3>
+            <p><strong>📅 Fecha:</strong> ${escapeHTML(entrega.fecha || "No especificada")}</p>
+            <p><strong>⏰ Hora:</strong> ${escapeHTML(entrega.hora || "No especificada")}</p>
         </div>
     `;
 
-
     entregas.appendChild(tarjeta);
-
 }
 
+// =========================================================
+// REGISTRAR NUEVA ENTREGA (FORMULARIO ADMIN)
+// =========================================================
+if (formEntrega) {
+    formEntrega.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-formEntrega.addEventListener(
-    "submit",
-    async (event) => {
+        const usuarioOption = usuarioEntrega.options[usuarioEntrega.selectedIndex];
+        const pedidoOption = pedidoEntrega.options[pedidoEntrega.selectedIndex];
 
-        event.preventDefault();
-
-
-        const admin =
-            auth.currentUser;
-
-
-        if (!admin) {
-
-            mensajeAdmin.textContent =
-                "❌ No hay una sesión iniciada.";
-
-            return;
-
-        }
-
-
-        if (
-            !ADMIN_EMAILS.includes(
-                admin.email.toLowerCase()
-            )
-        ) {
-
-            mensajeAdmin.textContent =
-                "❌ No tienes permisos de administrador.";
-
-            return;
-
-        }
-
-
-        const usuarioId =
-            usuarioEntrega.value;
-
-
-        const pedidoId =
-            pedidoEntrega.value;
-
-
-        const usuarioSeleccionado =
-            usuarioEntrega.options[
-                usuarioEntrega.selectedIndex
-            ];
-
-
-        const pedidoSeleccionado =
-            pedidoEntrega.options[
-                pedidoEntrega.selectedIndex
-            ];
-
-
-        const usuarioEmail =
-            usuarioSeleccionado.dataset.email;
-
-
-        const figura =
-            pedidoSeleccionado.dataset.pedido;
-
-
-        const archivo =
-            fotoEntrega.files[0];
-
+        const usuarioId = usuarioEntrega.value;
+        const pedidoId = pedidoEntrega.value;
+        const figura = pedidoOption ? pedidoOption.dataset.pedido : "Pedido";
+        const fecha = fechaEntrega ? fechaEntrega.value : "";
+        const hora = horaEntrega ? horaEntrega.value : "";
+        const archivoFoto = fotoEntrega && fotoEntrega.files[0] ? fotoEntrega.files[0] : null;
 
         if (!usuarioId || !pedidoId) {
-
-            mensajeAdmin.textContent =
-                "❌ Selecciona un usuario y un pedido.";
-
+            if (mensajeAdmin) mensajeAdmin.textContent = "⚠️ Debes seleccionar un usuario y un pedido.";
             return;
-
         }
 
-
-        if (!archivo) {
-
-            mensajeAdmin.textContent =
-                "❌ Selecciona una foto.";
-
+        if (!archivoFoto) {
+            if (mensajeAdmin) mensajeAdmin.textContent = "⚠️ Debes subir una fotografía de la entrega.";
             return;
-
         }
-
-
-        if (!archivo.type.startsWith("image/")) {
-
-            mensajeAdmin.textContent =
-                "❌ El archivo debe ser una imagen.";
-
-            return;
-
-        }
-
-
-        if (archivo.size > 10 * 1024 * 1024) {
-
-            mensajeAdmin.textContent =
-                "❌ La imagen no puede superar los 10 MB.";
-
-            return;
-
-        }
-
 
         try {
+            if (btnAgregar) btnAgregar.disabled = true;
+            if (mensajeAdmin) mensajeAdmin.textContent = "⏳ Subiendo imagen y guardando entrega...";
 
-            btnAgregar.disabled = true;
+            // 1. Subir imagen a Firebase Storage
+            const rutaStorage = `entregas/${Date.now()}_${archivoFoto.name}`;
+            const storageRef = ref(storage, rutaStorage);
+            
+            await uploadBytes(storageRef, archivoFoto);
+            const fotoURL = await getDownloadURL(storageRef);
 
-            mensajeAdmin.textContent =
-                "Subiendo entrega...";
-
-
-            const nombreArchivo =
-                Date.now() +
-                "_" +
-                archivo.name;
-
-
-            const ruta =
-                `entregas/${usuarioId}/${nombreArchivo}`;
-
-
-            const imagenRef =
-                ref(storage, ruta);
-
-
-            await uploadBytes(
-                imagenRef,
-                archivo
-            );
-
-
-            const fotoURL =
-                await getDownloadURL(
-                    imagenRef
-                );
-
-
-            const pedidoSnapshot =
-                await getDocs(
-                    query(
-                        collection(db, "pedidos"),
-                        where(
-                            "__name__",
-                            "==",
-                            pedidoId
-                        )
-                    )
-                );
-
-
-            let medida = "";
-
-
-            pedidoSnapshot.forEach((doc) => {
-
-                medida =
-                    doc.data().medida || "";
-
+            // 2. Guardar entrega en Firestore
+            await addDoc(collection(db, "entregas"), {
+                usuarioId: usuarioId,
+                pedidoId: pedidoId,
+                figura: figura,
+                fotoURL: fotoURL,
+                fecha: fecha,
+                hora: hora,
+                creadoEn: serverTimestamp()
             });
 
-
-            await addDoc(
-                collection(db, "entregas"),
-                {
-
-                    usuarioId:
-                        usuarioId,
-
-                    usuarioEmail:
-                        usuarioEmail,
-
-                    pedidoId:
-                        pedidoId,
-
-                    figura:
-                        figura,
-
-                    medida:
-                        medida,
-
-                    fotoURL:
-                        fotoURL,
-
-                    fotoPath:
-                        ruta,
-
-                    fecha:
-                        fechaEntrega.value,
-
-                    hora:
-                        horaEntrega.value,
-
-                    creadoPor:
-                        admin.email,
-
-                    creadoEn:
-                        serverTimestamp()
-
-                }
-            );
-
-
-            mensajeAdmin.textContent =
-                "✅ Entrega agregada correctamente.";
-
+            if (mensajeAdmin) {
+                mensajeAdmin.textContent = "✅ ¡Entrega registrada con éxito!";
+            }
 
             formEntrega.reset();
 
-            pedidoEntrega.innerHTML = `
-                <option value="">
-                    Selecciona un pedido
-                </option>
-            `;
+            // Recargar el historial si la entrega fue enviada al usuario actualmente logueado
+            if (auth.currentUser) {
+                await cargarEntregas(auth.currentUser);
+            }
 
-
-        } catch(error) {
-
-            console.error(error);
-
-            mensajeAdmin.textContent =
-                "❌ Error al agregar la entrega.";
-
+        } catch (error) {
+            console.error("Error al registrar la entrega:", error);
+            if (mensajeAdmin) {
+                mensajeAdmin.textContent = "❌ Error al registrar: " + error.message;
+            }
         } finally {
-
-            btnAgregar.disabled = false;
-
+            if (btnAgregar) btnAgregar.disabled = false;
         }
-
-    }
-);
-
-
-const btnModoOscuro =
-    document.getElementById("btnModoOscuro");
-
-
-if(btnModoOscuro){
-
-    btnModoOscuro.addEventListener(
-        "click",
-        () => {
-
-            const actual =
-                document.body.classList.toggle(
-                    "tema-claro"
-                );
-
-
-            btnModoOscuro.textContent =
-                actual
-                ?
-                "Modo Oscuro"
-                :
-                "Modo Claro";
-
-        }
-    );
-
+    });
 }
 
-
-function escapeHTML(text){
-
-    if(!text) return "";
-
-    return String(text)
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
-
+// =========================================================
+// FUNCIONES DE UTILIDAD
+// =========================================================
+function escapeHTML(str) {
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
