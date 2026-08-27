@@ -539,6 +539,245 @@ body.modo-oscuro small{
     color:#a0aec0;
 }
 
+/* =================================================
+   MODO OSCURO
+   Solo se aplica cuando body tiene .modo-oscuro
+================================================= */
+
+body.modo-oscuro{
+    background:#1e222a;
+    color:#e0e6ed;
+}
+
+
+/* HEADER */
+
+body.modo-oscuro header{
+    background:#253342;
+}
+
+
+/* TITULO */
+
+body.modo-oscuro .titulo:hover{
+    color:#b8e1ff;
+    text-shadow:0 0 10px #52796f;
+}
+
+
+/* MENU */
+
+body.modo-oscuro .menu a,
+body.modo-oscuro .menu button{
+    color:#e0e6ed;
+}
+
+body.modo-oscuro .menu a:hover,
+body.modo-oscuro .menu button:hover{
+    color:#b8e1ff;
+}
+
+
+/* INTRODUCCION */
+
+body.modo-oscuro .introduccion{
+    background-color:#253342;
+    color:#ffffff;
+}
+
+
+/* SUBMENUS */
+
+body.modo-oscuro .sub{
+    background:#2d3748;
+    color:#e0e6ed;
+    box-shadow:0 5px 15px rgba(0,0,0,.5);
+}
+
+body.modo-oscuro .sub a{
+    color:#b8e1ff;
+}
+
+body.modo-oscuro .sub a:hover{
+    background:#3a4a5e;
+}
+
+
+/* CONTENIDO PRINCIPAL */
+
+body.modo-oscuro .co{
+    background:#28303d;
+    box-shadow:0 8px 20px rgba(0,0,0,.4);
+}
+
+body.modo-oscuro .co h1{
+    color:#b8e1ff;
+}
+
+body.modo-oscuro .co p{
+    color:#c5d1de;
+}
+
+
+/* FORMULARIO */
+
+body.modo-oscuro .contenedorbase{
+    background:#232a34;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+    border-top:6px solid #4a6fa5;
+}
+
+body.modo-oscuro .contenedorbase h2{
+    color:#b8e1ff;
+}
+
+
+/* IMAGENES */
+
+body.modo-oscuro .imagen,
+body.modo-oscuro .long-imagen{
+    border:2px solid #4a6fa5;
+}
+
+
+/* BOTON ENVIAR */
+
+body.modo-oscuro .sube{
+    background:#4a6fa5;
+    color:#ffffff;
+}
+
+body.modo-oscuro .sube:hover{
+    background:#3b5984;
+    box-shadow:0 8px 15px rgba(0,0,0,.3);
+}
+
+
+/* CAMPOS DEL FORMULARIO */
+
+body.modo-oscuro .nombe span{
+    color:#b8e1ff;
+}
+
+body.modo-oscuro .nombe input,
+body.modo-oscuro .nombe select,
+body.modo-oscuro .nombe textarea{
+    background:#1e242d;
+    border:2px solid #4a5568;
+    color:#e0e6ed;
+}
+
+body.modo-oscuro .nombe input:focus,
+body.modo-oscuro .nombe select:focus,
+body.modo-oscuro .nombe textarea:focus{
+    border-color:#7b9acc;
+    box-shadow:0 0 10px rgba(123,154,204,.3);
+}
+
+
+/* TEXTOS */
+
+body.modo-oscuro .soli{
+    color:#b8e1ff;
+}
+
+body.modo-oscuro .difuminado{
+    color:#a0aec0;
+}
+
+body.modo-oscuro .nada{
+    background:#253342;
+}
+
+
+/* BOTONES REDES */
+
+body.modo-oscuro .red-btn{
+    background:#4a6fa5;
+    box-shadow:0 5px 12px rgba(0,0,0,.3);
+}
+
+body.modo-oscuro .red-btn:hover{
+    box-shadow:0 10px 20px rgba(0,0,0,.4);
+}
+
+
+/* LOGIN */
+
+body.modo-oscuro .btn-login{
+    background-color:#4a6fa5;
+    color:#e0e6ed;
+}
+
+body.modo-oscuro .btn-login:hover{
+    background-color:#5d83bd;
+}
+
+body.modo-oscuro .login{
+    background-color:#232a34;
+    box-shadow:0 5px 20px rgba(0,0,0,.6);
+}
+
+body.modo-oscuro .login h2{
+    color:#b8e1ff;
+}
+
+body.modo-oscuro .login input{
+    background-color:#1e242d;
+    border:1px solid #4a5568;
+    color:#e0e6ed;
+}
+
+body.modo-oscuro .login input::placeholder{
+    color:#a0aec0;
+}
+
+body.modo-oscuro .login input:focus{
+    border-color:#7b9acc;
+    box-shadow:0 0 10px rgba(123,154,204,.3);
+}
+
+body.modo-oscuro .login button{
+    background-color:#4a6fa5;
+    color:#ffffff;
+}
+
+body.modo-oscuro .login button:hover{
+    background-color:#5d83bd;
+}
+
+body.modo-oscuro #mensaje{
+    color:#b8e1ff;
+}
+
+
+/* =========================
+   SELECCIONAR ARCHIVO
+========================= */
+
+body.modo-oscuro #archivoFigura{
+    background:#1e242d;
+    color:#e0e6ed;
+    border:2px solid #4a5568;
+}
+
+body.modo-oscuro #archivoFigura:hover{
+    border-color:#7b9acc;
+}
+
+body.modo-oscuro #archivoFigura::file-selector-button{
+    background:#4a6fa5;
+    color:#ffffff;
+}
+
+body.modo-oscuro #archivoFigura::file-selector-button:hover{
+    background:#5d83bd;
+}
+
+body.modo-oscuro small{
+    color:#a0aec0;
+}
+
 /* =========================
    DISEÑO PARA TELEFONOS
 ========================= */
