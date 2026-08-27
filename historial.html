@@ -8,6 +8,7 @@
     <title>The Makers - Historial</title>
 
     <link rel="stylesheet" href="historial.css">
+
     <script type="module" src="historial.js" defer></script>
     <script src="nosexd.js" defer></script>
 </head>
@@ -15,7 +16,7 @@
 <body>
 
     <header>
-        
+
         <a href="https://impresiones-3d-aml.web.app/" class="volver">
             Volver al inicio
         </a>
@@ -28,34 +29,117 @@
 
     </header>
 
-
     <main>
-        <section class="usuario">
-            <h2>Mi cuenta</h2>
-            <p id="usuarioNombre">
 
-            </p>
-            <p id="usuarioCorreo">
-            </p>
+        <section class="usuario">
+
+            <h2>Mi cuenta</h2>
+
+            <p id="usuarioNombre"></p>
+
+            <p id="usuarioCorreo"></p>
 
         </section>
+
+
+        <section id="panelAdmin" class="admin-panel">
+
+            <h2>Administración de entregas</h2>
+
+            <form id="formEntrega">
+
+                <label for="usuarioEntrega">
+                    Usuario
+                </label>
+
+                <select id="usuarioEntrega" required>
+
+                    <option value="">
+                        Selecciona un usuario
+                    </option>
+
+                </select>
+
+
+                <label for="pedido">
+                    Pedido
+                </label>
+
+                <input
+                    type="text"
+                    id="pedido"
+                    placeholder="Ej: Gengar personalizado"
+                    required
+                >
+
+
+                <label for="fotoEntrega">
+                    Foto del usuario junto a su pedido
+                </label>
+
+                <input
+                    type="file"
+                    id="fotoEntrega"
+                    accept="image/*"
+                    required
+                >
+
+
+                <label for="fechaEntrega">
+                    Fecha de entrega
+                </label>
+
+                <input
+                    type="date"
+                    id="fechaEntrega"
+                    required
+                >
+
+
+                <label for="horaEntrega">
+                    Hora de entrega
+                </label>
+
+                <input
+                    type="time"
+                    id="horaEntrega"
+                    required
+                >
+
+
+                <button type="submit" class="btn-agregar">
+                    Agregar entrega
+                </button>
+
+            </form>
+
+            <p id="mensajeAdmin"></p>
+
+        </section>
+
 
         <section class="historial">
+
             <h2>Mis entregas</h2>
-            <p id="mensajeHistorial" class="mensaje-historial">
 
-            </p>
+            <p id="mensajeHistorial" class="mensaje-historial"></p>
 
-            <div id="entregas" class="entregas">
-            </div>
+            <div id="entregas" class="entregas"></div>
+
         </section>
+
     </main>
 
+
     <footer>
+
         <p>
             The Makers - Historial de entregas
         </p>
+
     </footer>
 
 </body>
+
 </html>
+
