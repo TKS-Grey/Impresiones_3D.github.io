@@ -106,7 +106,7 @@
                     { alert('Error: Usa tu correo institucional'); return false; }">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://tks-grey.github.io/Impresiones_3D.github.io/">
+                        <input type="hidden" name="_next" value="https://impresiones-3d-aml.web.app/">
 
                         <div class="nombe">
                             <span>Nombre: </span>
@@ -153,6 +153,35 @@
                             </select>
                         </div>
 
+                        <div class="nombe">
+                            <span>Curso: </span>
+                            <select name="curso" required style="width: 100%; padding: 5px; border-radius: 4px;">
+                                <option value="" disabled selected>Selecciona la medida</option>
+                                <option value="Figura 5Cm">5cm</option>
+                                <option value="Figura 7Cm">7cm</option>
+                                <option value="Figura 9Cm">9cm</option>
+                                <option value="Figura 11Cm">11cm</option>
+                                <option value="Figura 13Cm">13cm</option>
+                                <option value="Figura 15Cm">15cm</option>
+                            </select>
+                        </div>
+                        
+                        <div class="nombe">
+                            <label for="archivoFigura">
+                                Archivo de la figura
+                            </label>
+
+                            <input
+                                type="file"
+                                id="archivoFigura"
+                                name="archivoFigura"
+                                accept=".stl,.obj,.3mf,.glb,.gltf,.zip"
+                            >
+
+                            <small>
+                                Puedes subir tu propio modelo 3D para indicarnos qué figura quieres.
+                            </small>
+                        </div>
                         <div class="nombe"> 
                             <span>Mensaje:</span> 
                             <textarea name="mensaje" rows="4" placeholder="Escribe tu solicitud" required></textarea>
