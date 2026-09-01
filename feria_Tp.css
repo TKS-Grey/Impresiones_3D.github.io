@@ -325,13 +325,12 @@ footer{
 
 .redes{
     display:flex;
-    justify-content:flex-end;
+    justify-content:right;
     align-items:center;
-    margin-top:-5%;
-    margin-right:20px;
-    gap: 3%;
-}
-
+    gap:35px; 
+    width:100%; 
+    position:relative;
+ }
 
 .red-btn{
     display:flex;
@@ -539,33 +538,39 @@ body.modo-oscuro small{
     color:#a0aec0;
 }
 
-/* =================================================
-   MODO OSCURO
-   Solo se aplica cuando body tiene .modo-oscuro
-================================================= */
+.datos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.nombres {
+    color: rgb(141, 231, 231);
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 8px rgba(141, 231, 231, 0.35);
+
+}
 
 body.modo-oscuro{
     background:#1e222a;
     color:#e0e6ed;
 }
 
-
-/* HEADER */
-
 body.modo-oscuro header{
     background:#253342;
 }
-
-
-/* TITULO */
 
 body.modo-oscuro .titulo:hover{
     color:#b8e1ff;
     text-shadow:0 0 10px #52796f;
 }
-
-
-/* MENU */
 
 body.modo-oscuro .menu a,
 body.modo-oscuro .menu button{
@@ -577,16 +582,10 @@ body.modo-oscuro .menu button:hover{
     color:#b8e1ff;
 }
 
-
-/* INTRODUCCION */
-
 body.modo-oscuro .introduccion{
     background-color:#253342;
     color:#ffffff;
 }
-
-
-/* SUBMENUS */
 
 body.modo-oscuro .sub{
     background:#2d3748;
@@ -602,9 +601,6 @@ body.modo-oscuro .sub a:hover{
     background:#3a4a5e;
 }
 
-
-/* CONTENIDO PRINCIPAL */
-
 body.modo-oscuro .co{
     background:#28303d;
     box-shadow:0 8px 20px rgba(0,0,0,.4);
@@ -618,9 +614,6 @@ body.modo-oscuro .co p{
     color:#c5d1de;
 }
 
-
-/* FORMULARIO */
-
 body.modo-oscuro .contenedorbase{
     background:#232a34;
     box-shadow:0 10px 25px rgba(0,0,0,.4);
@@ -631,16 +624,10 @@ body.modo-oscuro .contenedorbase h2{
     color:#b8e1ff;
 }
 
-
-/* IMAGENES */
-
 body.modo-oscuro .imagen,
 body.modo-oscuro .long-imagen{
     border:2px solid #4a6fa5;
 }
-
-
-/* BOTON ENVIAR */
 
 body.modo-oscuro .sube{
     background:#4a6fa5;
@@ -651,9 +638,6 @@ body.modo-oscuro .sube:hover{
     background:#3b5984;
     box-shadow:0 8px 15px rgba(0,0,0,.3);
 }
-
-
-/* CAMPOS DEL FORMULARIO */
 
 body.modo-oscuro .nombe span{
     color:#b8e1ff;
@@ -674,9 +658,6 @@ body.modo-oscuro .nombe textarea:focus{
     box-shadow:0 0 10px rgba(123,154,204,.3);
 }
 
-
-/* TEXTOS */
-
 body.modo-oscuro .soli{
     color:#b8e1ff;
 }
@@ -689,9 +670,6 @@ body.modo-oscuro .nada{
     background:#253342;
 }
 
-
-/* BOTONES REDES */
-
 body.modo-oscuro .red-btn{
     background:#4a6fa5;
     box-shadow:0 5px 12px rgba(0,0,0,.3);
@@ -700,9 +678,6 @@ body.modo-oscuro .red-btn{
 body.modo-oscuro .red-btn:hover{
     box-shadow:0 10px 20px rgba(0,0,0,.4);
 }
-
-
-/* LOGIN */
 
 body.modo-oscuro .btn-login{
     background-color:#4a6fa5;
@@ -750,11 +725,6 @@ body.modo-oscuro #mensaje{
     color:#b8e1ff;
 }
 
-
-/* =========================
-   SELECCIONAR ARCHIVO
-========================= */
-
 body.modo-oscuro #archivoFigura{
     background:#1e242d;
     color:#e0e6ed;
@@ -778,10 +748,6 @@ body.modo-oscuro small{
     color:#a0aec0;
 }
 
-/* =========================
-   DISEÑO PARA TELEFONOS
-========================= */
-
 @media (max-width: 768px) {
 
     header{
@@ -796,14 +762,12 @@ body.modo-oscuro small{
         gap: 10px;
     }
 
-    /* TITULO */
     .titulo{
         font-size: 28px;
         width: 100%;
         text-align: center;
     }
 
-    /* MENU */
     .menu{
         display: flex;
         flex-direction: row !important;
