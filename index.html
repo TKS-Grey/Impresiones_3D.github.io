@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Impresiones 3D AML: proyecto educativo dedicado a acercar la impresión 3D, el diseño y la fabricación digital a la comunidad estudiantil.">
     <link rel="icon" type="image/png" href="icono.png">
     <title>Impresiones 3D</title>
     <link rel="stylesheet" href="feria_Tp.css?v=999">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7620487903856300"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 </head>
-    <!--Socios, roles;
-        Diseño de la pagina: Baltazar Gonzalez y Victor Uribe
-        Estrucutra General: Tomás Lillo
-        Actualizacion de las figuras: Sebastian Inostroza y Tomas Fernandez
-        Revision de solicitudes: Tomás Fernandez
-        Popups js: Tomas x2 y Baltazar
 
-        Agregar Popups, Mejorar el diseño,
-    -->
 <body>
 
-    <header>   
+    <header>
         <nav class="navbar">
             <h2 class="titulo">
                 <a href="https://impresiones-3d-aml.web.app/">The Makers</a>
@@ -29,17 +22,16 @@
             <ul class="menu">
                 <li class="dropdown">
                     <button onclick="mostrarMensaje()" class="introduccion">
-                        Introduccion a nuestro proyecto
+                        Introducción a nuestro proyecto
                     </button>
-                    <!--Tomy tu haras este apartado del comentario en la pagina-->
-                    <script>
-                        function mostrarMensaje(){
-                            alert("Bienvenidos a nuestra página sobre impresiones 3D, un proyecto que busca acercar a los estudiantes a la tecnología y el diseño. Aquí podrás solicitar impresiones 3D..")
-                        }
+                    <script> 
+                        function mostrarMensaje(){ alert("Bienvenidos a nuestra página sobre impresiones 3D, un proyecto que busca acercar a los estudiantes a la tecnología, el diseño y la fabricación digital. Aquí podrás conocer nuestro proyecto, explorar nuestra galería y realizar solicitudes de impresión 3D.");}
                     </script>
                 </li>
                 <li class="dropdown">
-                    <a href="https://tks-grey.github.io/Impresiones_3D-Gallery/">Nuestra galeria</a>
+                    <a href="https://tks-grey.github.io/Impresiones_3D-Gallery/">
+                        Nuestra galería
+                    </a>
                 </li>
                 <li class="dropdown">
                     <button id="btnBajar">Hacer solicitud</button>
@@ -60,7 +52,6 @@
                         <input type="text" id="apellido" placeholder="Primer apellido">
                         <input type="email" id="email" placeholder="Correo electrónico">
                         <input type="password" id="password" placeholder="Contraseña">
-
                         <button id="btnLogin">
                             Iniciar sesión
                         </button>
@@ -78,66 +69,200 @@
             </ul>
         </nav>
     </header>
+
+
     <div class="centroa">
         <section class="co">
-            <h1>¿Sobre que es nuestro proyecto?</h1>
-            <p>
-                Consiste en la impresion de modelos 3D, esto con el fin de que la comunidad educativa
-                (principalmente estudiantes) tengan la oportunidad de materializar sus propias ideas. 
-                Esto con el fin de fomentar la imaginacion de futuros diseñadores 3D o aficionados a la impresion 3D. 
+            <h1>¿Sobre qué es nuestro proyecto?</h1>
+            <p class="intro-text">
+                Impresiones 3D AML es un proyecto educativo creado para acercar la fabricación digital
+                y el diseño tridimensional a la comunidad estudiantil. Nuestra idea es que una propuesta
+                digital pueda convertirse en un objeto físico mediante el uso de tecnologías de impresión 3D.
             </p>
+            <p>
+                El proyecto está pensado principalmente para estudiantes que quieran conocer mejor el mundo
+                del modelado 3D, experimentar con nuevas ideas o solicitar la fabricación de una figura.
+                Además de producir modelos, buscamos que el proceso sirva como una oportunidad para aprender,
+                desarrollar la creatividad y descubrir nuevas posibilidades de diseño.
+            </p>
+            <div class="info-grid">
+                <article class="info-card">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <h2>Diseño y modelos 3D</h2>
+                    <p>
+                        Trabajamos con modelos tridimensionales que pueden convertirse en piezas físicas.
+                        Dependiendo del modelo, se revisan sus características antes de preparar una impresión.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h2>Aprender creando</h2>
+                    <p>
+                        La impresión 3D permite comprender de forma práctica cómo una idea pasa desde un
+                        archivo digital hasta un objeto. Esto puede despertar el interés por el diseño,
+                        la tecnología y la fabricación digital.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h2>Proyecto para estudiantes</h2>
+                    <p>
+                        El sitio está orientado a la comunidad educativa del Liceo Arturo Matte Larraín.
+                        Las solicitudes se realizan mediante el formulario disponible en esta página.
+                    </p>
+                </article>
+            </div>
+
+            <section class="contenido-seccion">
+                <h2>¿Cómo funciona una solicitud?</h2>
+                <p>
+                    Para solicitar una impresión, primero debes tener una idea o un modelo que quieras
+                    materializar. Luego puedes completar el formulario indicando tus datos, curso,
+                    tamaño deseado y una descripción de la figura.
+                </p>
+                <div class="pasos-grid">
+                    <article class="paso">
+                        <span>1</span>
+                        <h3>Prepara tu idea</h3>
+                        <p>
+                            Piensa qué figura quieres tener.
+                        </p>
+
+                    </article>
+                    <article class="paso">
+                        <span>2</span>
+                        <h3>Envía la solicitud</h3>
+                        <p>
+                            Completa el formulario con la información necesaria para tu pedido.
+                        </p>
+                    </article>
+                    <article class="paso">
+                        <span>3</span>
+                        <h3>Revisión del modelo</h3>
+                        <p>
+                            La solicitud sera revisada para comprobar que el modelo sea adecuado para imprimir.
+                        </p>
+                    </article>
+                    <article class="paso">
+                        <span>4</span>
+                        <h3>Producción</h3>
+                        <p>
+                            Ya comprobado el modelo, se procedera a la impresión y al contacto con el usuario.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>¿Qué puedes encontrar en nuestra galería?</h2>
+                <p>
+                    En <strong>Nuestra galería</strong> mostramos modelos que hemos producido y otros que
+                    se encuentran en proceso de producción.
+                </p>
+                <p>
+                    Modelos 3D interactivos para que puedas observar una figura desde 
+                    diferentes ángulos y comprender su forma a detalle, para apreciar si es el modelo que deseas.
+                </p>
+            </section>
 
             <div class="repe">
-                <img class="imagen" src="https://http2.mlstatic.com/D_NQ_NP_885641-MLC81786860502_012025-O.webp" alt="Figurita">
-                <img class="imagen" src="https://tufigura3d.com/wp-content/uploads/2021/03/Impresion-3D-filamento-vs-resina-scaled.jpg" alt="Figurita">
-                <img class="imagen" src="https://dl2.myminifactory.com/object-assets/5f91a4d61d4a1/images/img-20201103-192004.jpg" alt="Figurita">
+                <img class="imagen"src="https://http2.mlstatic.com/D_NQ_NP_885641-MLC81786860502_012025-O.webp"alt="Ejemplo de figura realizada mediante impresión 3D">
+                <img
+                    class="imagen"
+                    src="https://tufigura3d.com/wp-content/uploads/2021/03/Impresion-3D-filamento-vs-resina-scaled.jpg"
+                    alt="Ejemplo de impresión 3D con diferentes materiales"
+                >
+
+                <img
+                    class="imagen"
+                    src="https://dl2.myminifactory.com/object-assets/5f91a4d61d4a1/images/img-20201103-192004.jpg"
+                    alt="Ejemplo de modelo tridimensional"
+                >
+
             </div>
-            <br>
-            <p>
-                Aqui algunas pequeñas muestras de la variedad de figuras que podemos lograr con las impresiones 3D
-            </p>
-            <br>
-            <img class="long-imagen" src="https://www.impresoras3d.com/wp-content/uploads/2022/06/Portada-ideas-Pokemon-1400x735.jpg" alt="Figura">
-            <div id="seccionFormulario" class="contenedorbase">
-                <h2 class="soli">Solicitud</h2>
+
+
+            <section class="contenido-seccion muestra-seccion">
+
+                <h2>Ejemplos de impresión 3D</h2>
+
+                <p>
+                    A continuación puedes ver algunas referencias visuales relacionadas con la impresión 3D.
+                    La apariencia final de una pieza depende del modelo, sus dimensiones, la configuración de
+                    impresión y el material utilizado.
+                </p>
+
+            </section>
+
+
+            <img
+                class="long-imagen"
+                src="https://www.impresoras3d.com/wp-content/uploads/2022/06/Portada-ideas-Pokemon-1400x735.jpg"
+                alt="Ejemplos de ideas para modelos de impresión 3D"
+            >
+
+
+            <section class="contenido-seccion">
+
+                <h2>¿Qué es la impresión 3D?</h2>
+                <p>
+                    La impresión 3D es una tecnología de fabricación que permite crear objetos físicos
+                    a partir de modelos digitales. A diferencia de muchos métodos tradicionales de fabricación,
+                    una impresora 3D construye el objeto progresivamente hasta obtener la forma final.
+                </p>
+                <p>
+                    Para realizar una impresión se requiere de un modelo 3D y una
+                    configuración para la impresora. El modelo se convierte mediante un programa,
+                    en nuestro caso "Ultimaker cura".
+                </p>
+                <p>
+                    Esta tecnología tiene aplicaciones en educación, diseño, ingeniería, prototipado,
+                    fabricación de piezas y muchos otros campos. Por esta razón, aprender sus conceptos
+                    básicos puede ser una buena introducción al mundo de la fabricación digital.
+                </p>
+            </section>
+
+            <section id="seccionFormulario" class="contenedorbase">
+                <h2 class="soli">Solicitud de impresión</h2>
+                <p>
+                    Completa el siguiente formulario para enviarnos tu solicitud. Recuerda proporcionar
+                    información clara sobre la figura que deseas realizar para encontrar la adecuada.
+                </p>
                 <main>
-                    <form action="https://formsubmit.co/impresiones3daml@gmail.com" method="POST"
-                    onsubmit="if(!this.email.value.endsWith('@alumnos.sip.cl'))
-                    { alert('Error: Usa tu correo institucional'); return false; }">
+                    <form action="https://formsubmit.co/impresiones3daml@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="if(!this.email.value.endsWith('@alumnos.sip.cl')) { alert('Error: Usa tu correo institucional'); return false; }">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_next" value="https://impresiones-3d-aml.web.app/">
-
                         <div class="nombe">
-                            <span>Nombre: </span>
-                            <input type="text" name="nombre" required
-                            autocapitalize="words" autocomplete="off">
+                            <span>Nombre:</span>
+                            <input type="text" name="nombre" required autocapitalize="words" autocomplete="off">
                         </div>
-
                         <div class="nombe">
-                            <span>Apellido: </span>
-                            <input type="text" name="apellido" required
-                            autocapitalize="words" autocomplete="off">
+                            <span>Apellido:</span>
+                            <input type="text" name="apellido" required autocapitalize="words" autocomplete="off">
                         </div>
-
                         <div class="nombe">
-                            <span>Correo electrónico: </span>
-                             <input type="email" name="email"
-                              required autocapitalize="none" 
-                              autocomplete="off" 
-                              placeholder="usuario@alumnos.sip.cl">
+                            <span>Correo electrónico:</span>
+                            <input type="email" name="email" required autocapitalize="none" autocomplete="off" placeholder="usuario@alumnos.sip.cl">
                         </div>
-
                         <div class="nombe">
-                            <span>Curso: </span>
+                            <span>Curso:</span>
                             <select name="curso" required style="width: 100%; padding: 5px; border-radius: 4px;">
                                 <option value="" disabled selected>Selecciona tu curso</option>
-                                <option value="7°A Basico">7°A Basico</option>
-                                <option value="7°B Basico">7°B Basico</option>
-                                <option value="7°C Basico">7°C Basico</option>
-                                <option value="8°A Basico">8°A Basico</option>
-                                <option value="8°B Basico">8°B Basico</option>
-                                <option value="8°C Basico">8°C Basico</option>
+                                <option value="7°A Basico">7°A Básico</option>
+                                <option value="7°B Basico">7°B Básico</option>
+                                <option value="7°C Basico">7°C Básico</option>
+                                <option value="8°A Basico">8°A Básico</option>
+                                <option value="8°B Basico">8°B Básico</option>
+                                <option value="8°C Basico">8°C Básico</option>
                                 <option value="I°A Medio">I°A Medio</option>
                                 <option value="I°B Medio">I°B Medio</option>
                                 <option value="I°C Medio">I°C Medio</option>
@@ -152,56 +277,50 @@
                                 <option value="IV°C Medio">IV°C Medio</option>
                             </select>
                         </div>
-
                         <div class="nombe">
-                            <span>Tamañao de la figura: </span>
-                            <select name="curso" required style="width: 100%; padding: 5px; border-radius: 4px;">
+                            <span>Tamaño de la figura:</span>
+                            <select name="tamano" required style="width: 100%; padding: 5px; border-radius: 4px;">
                                 <option value="" disabled selected>Selecciona la medida</option>
-                                <option value="Figura 5Cm">5cm</option>
-                                <option value="Figura 7Cm">7cm</option>
-                                <option value="Figura 9Cm">9cm</option>
-                                <option value="Figura 11Cm">11cm</option>
-                                <option value="Figura 13Cm">13cm</option>
-                                <option value="Figura 15Cm">15cm</option>
+                                <option value="Figura 5Cm">5 cm</option>
+                                <option value="Figura 7Cm">7 cm</option>
+                                <option value="Figura 9Cm">9 cm</option>
+                                <option value="Figura 11Cm">11 cm</option>
+                                <option value="Figura 13Cm">13 cm</option>
+                                <option value="Figura 15Cm">15 cm</option>
                             </select>
                         </div>
-                        
                         <div class="nombe">
-                            <label for="archivoFigura">
-                                Archivo de la figura
-                            </label>
-
-                            <input
-                                type="file"
-                                id="archivoFigura"
-                                name="archivoFigura"
-                                accept=".stl,.obj,.3mf,.glb,.gltf,.zip"
-                            >
-
+                            <label for="archivoFigura">Archivo de la figura</label>
+                            <input type="file" id="archivoFigura" name="attachment" accept=".stl,.obj,.3mf,.glb,.gltf,.zip,.gcode">
                             <small>
                                 Puedes subir tu propio modelo 3D para indicarnos qué figura quieres.
                             </small>
-                        </div>
-                        <div class="nombe"> 
-                            <span>Mensaje:</span> 
-                            <textarea name="mensaje" rows="4" placeholder="Escribe tu solicitud" required></textarea>
                          </div>
-                        <button class="sube" type="submit">Enviar</button>
+                        <div class="nombe">
+                            <span>Mensaje:</span>
+                            <textarea name="mensaje" rows="4" placeholder="Escribe tu solicitud" required></textarea>
+                        </div>
+                        <button class="sube" type="submit">
+                            Enviar solicitud
+                        </button>
                     </form>
                 </main>
-                <br> 
-                <p class="difuminado"> (En dado caso de que la figura reciba algun daño post entrega, esta no sera repuesta.) </p>                 
-             </div>
+                <p class="difuminado">
+                    En caso de que la figura reciba algún daño después de la entrega,
+                    esta no será repuesta.
+                </p>
+            </section>
         </section>
     </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () =>{
+        document.addEventListener('DOMContentLoaded', () => {
             const boton = document.getElementById('btnBajar');
             const destino = document.getElementById('seccionFormulario');
             if (boton && destino) {
                 boton.addEventListener('click', () => {
-                    destino.scrollIntoView({ 
-                        behavior: 'smooth' 
+                    destino.scrollIntoView({
+                        behavior: 'smooth'
                     });
                 });
             }
@@ -209,62 +328,63 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () =>{
+        document.addEventListener('DOMContentLoaded', () => {
             const boton = document.getElementById('parteRedes');
             const destino = document.getElementById('redes');
             if (boton && destino) {
                 boton.addEventListener('click', () => {
-                    destino.scrollIntoView({ 
-                        behavior: 'smooth' 
+                    destino.scrollIntoView({
+                        behavior: 'smooth'
                     });
                 });
             }
         });
     </script>
-    <div id="redes" class="redes"> 
-        <a href="https://www.instagram.com/impresiones3daml?igsh=d2w1azA0MWZxMmtx" target="_blank" class="red-btn instagram"> <i class="fa-brands fa-instagram"></i> Instagram </a>
-        <a href="https://x.com/impesiones3DAML" target="_blank" class="red-btn twitter"> <i class="fa-brands fa-x-twitter"></i> Twitter(X) </a> 
+
+    <div id="redes" class="redes">
+        <a href="https://www.instagram.com/impresiones3daml?igsh=d2w1azA0MWZxMmtx" target="_blank" class="red-btn instagram">
+            <i class="fa-brands fa-instagram"></i>
+            Instagram
+        </a>
+
+
+        <a href="https://x.com/impesiones3DAML" target="_blank" class="red-btn twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+            Twitter(X)
+        </a>
     </div>
+
     <footer>
-    <div id="datos" class="datos">
+        <div id="datos" class="datos">
+            <h3>
+                <img src="icono.png" alt="Logo de Impresiones 3D">
+                Impresiones3D AML
+            </h3>
 
-        <h3>
-            <img src="icono.png">
-            Impresiones3D AML
-        </h3>
-
-        <p>
-            Bienvenidos a Impresiones3D, un sitio web independiente,
-            trabajado y programado por 5 estudiantes:
-        </p>
-
-        <div class="nombres">
-            <p>Baltazar Gonzalez</p>
-            <p>Tomás Lillo</p>
-            <p>Tomás Fernandez</p>
-            <p>Victor Uribe</p>
-            <p>Sebastian Inostroza</p>
+            <p>
+                Impresiones3D, un sitio web independiente,
+                trabajado por 5 estudiantes.
+            </p>
+            <div class="nombres">
+                <p>Baltazar Gonzalez</p>
+                <p>Tomás Lillo</p>
+                <p>Tomás Fernandez</p>
+                <p>Victor Uribe</p>
+                <p>Sebastian Inostroza</p>
+            </div>
+            <p>
+                Este sitio web tiene el fin de que los estudiantes del
+                Liceo Arturo Matte Larraín puedan hacer solicitudes
+                de impresiones en 3D.
+            </p>
+            <p>
+                A través de este proyecto esperamos fomentar la
+                imaginación, el interés por la tecnología y la
+                participación de los estudiantes en actividades
+                relacionadas con el diseño y la fabricación.
+            </p>
         </div>
-
-        <p>
-            Este sitio web tiene el fin de que los estudiantes del
-            liceo Arturo Matte Larrain puedan hacer solicitudes
-            de impresiones en 3D.
-        </p>
-        <p>
-            El sitio web cuenta con una galeria
-            propia en la cual estan los modelos que hemos producido,
-            y los que estan en produccion, para que los usuarios puedan
-            ver a detalle cómo son las figuras.
-        </p>
-        <p>
-            El sitio web cuenta con una galeria
-            propia en la cual estan los modelos que hemos producido,
-            y los que estan en produccion, para que los usuarios puedan
-            ver a detalle cómo son las figuras.
-        </p>
-    </div>
-</footer>
+    </footer>
     <script type="module" src="nosexd.js"></script>
     <script type="module" src="login.js"></script>
 </body>
