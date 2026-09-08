@@ -42,6 +42,9 @@
                 <li class="dropdown">
                     <button id="btnModoOscuro">Modo Oscuro</button>
                 </li>
+                <li class="dropdown">
+                    <button id="btninfo">Información</button>
+                </li>
                 <li class="login-container">
                     <button id="btnAbrirLogin" class="btn-login">
                         Crear cuenta o iniciar sesión
@@ -69,7 +72,6 @@
             </ul>
         </nav>
     </header>
-
 
     <div class="centroa">
         <section class="co">
@@ -135,8 +137,8 @@
                         <p>
                             Piensa qué figura quieres tener.
                         </p>
-
                     </article>
+
                     <article class="paso">
                         <span>2</span>
                         <h3>Envía la solicitud</h3>
@@ -144,6 +146,7 @@
                             Completa el formulario con la información necesaria para tu pedido.
                         </p>
                     </article>
+
                     <article class="paso">
                         <span>3</span>
                         <h3>Revisión del modelo</h3>
@@ -151,6 +154,7 @@
                             La solicitud sera revisada para comprobar que el modelo sea adecuado para imprimir.
                         </p>
                     </article>
+
                     <article class="paso">
                         <span>4</span>
                         <h3>Producción</h3>
@@ -175,25 +179,13 @@
 
             <div class="repe">
                 <img class="imagen"src="https://http2.mlstatic.com/D_NQ_NP_885641-MLC81786860502_012025-O.webp"alt="Ejemplo de figura realizada mediante impresión 3D">
-                <img
-                    class="imagen"
-                    src="https://tufigura3d.com/wp-content/uploads/2021/03/Impresion-3D-filamento-vs-resina-scaled.jpg"
-                    alt="Ejemplo de impresión 3D con diferentes materiales"
-                >
-
-                <img
-                    class="imagen"
-                    src="https://dl2.myminifactory.com/object-assets/5f91a4d61d4a1/images/img-20201103-192004.jpg"
-                    alt="Ejemplo de modelo tridimensional"
-                >
-
+                <img class="imagen" src="https://tufigura3d.com/wp-content/uploads/2021/03/Impresion-3D-filamento-vs-resina-scaled.jpg" alt="Ejemplo de impresión 3D con diferentes materiales">
+                <img class="imagen" src="https://dl2.myminifactory.com/object-assets/5f91a4d61d4a1/images/img-20201103-192004.jpg" alt="Ejemplo de modelo tridimensional">
             </div>
 
 
             <section class="contenido-seccion muestra-seccion">
-
                 <h2>Ejemplos de impresión 3D</h2>
-
                 <p>
                     A continuación puedes ver algunas referencias visuales relacionadas con la impresión 3D.
                     La apariencia final de una pieza depende del modelo, sus dimensiones, la configuración de
@@ -336,12 +328,25 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const boton = document.getElementById('btninfo');
+            const destino = document.getElementById('info');
+            if (boton && destino) {
+                boton.addEventListener('click', () => {
+                    destino.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+
     <div id="redes" class="redes">
         <a href="https://www.instagram.com/impresiones3daml?igsh=d2w1azA0MWZxMmtx" target="_blank" class="red-btn instagram">
             <i class="fa-brands fa-instagram"></i>
             Instagram
         </a>
-
 
         <a href="https://x.com/impesiones3DAML" target="_blank" class="red-btn twitter">
             <i class="fa-brands fa-x-twitter"></i>
@@ -355,7 +360,6 @@
                 <img src="icono.png" alt="Logo de Impresiones 3D">
                 Impresiones3D AML
             </h3>
-
             <p>
                 Impresiones3D, un sitio web independiente,
                 trabajado por 5 estudiantes.
@@ -379,7 +383,7 @@
                 relacionadas con el diseño y la fabricación.
             </p>
         </div>
-        <div>
+        <div id="info" class="info">
             <p><a href="terminos.html">Términos y Condiciones</a></p>
             <p><a href="privacidad.html">Política de Privacidad</a></p>
             <p><a href="contacto.html">Contacto</a></p>
