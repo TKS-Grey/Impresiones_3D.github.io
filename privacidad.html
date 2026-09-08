@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de privacidad de Impresiones 3D AML. Información sobre el tratamiento de datos y archivos enviados mediante nuestro sitio web.">
+    <link rel="icon" type="image/png" href="icono.png">
+    <title>Política de Privacidad - Impresiones 3D AML</title>
+    <link rel="stylesheet" href="feria_Tp.css?v=999">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="titulo">
+                <a href="https://impresiones-3d-aml.web.app/">The Makers</a>
+            </h2>
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="https://impresiones-3d-aml.web.app/">Inicio</a>
+                </li>
+                <li class="dropdown">
+                    <a href="https://tks-grey.github.io/Impresiones_3D-Gallery/">Nuestra galería</a>
+                </li>
+                <li class="dropdown">
+                    <a href="https://impresiones-3d-aml.web.app/#seccionFormulario">Hacer solicitud</a>
+                </li>
+                <li class="dropdown">
+                    <button id="btnModoOscuro">Modo Oscuro</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="co">
+            <h1>Política de Privacidad</h1>
+            <p><strong>Última actualización:</strong> 7 de septiembre de 2026</p>
+
+            <section class="contenido-seccion">
+                <h2>1. Información general</h2>
+                <p>En Impresiones 3D AML nos preocupamos por la privacidad de las personas que utilizan nuestro sitio web. Esta política explica qué información puede recibirse mediante las funciones del sitio y para qué se utiliza.</p>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>2. Información que recopilamos</h2>
+                <p>Cuando una persona realiza una solicitud de impresión 3D, el formulario puede recibir los siguientes datos:</p>
+                <ul>
+                    <li>Nombre.</li>
+                    <li>Apellido.</li>
+                    <li>Correo electrónico institucional.</li>
+                    <li>Curso.</li>
+                    <li>Tamaño solicitado para la figura.</li>
+                    <li>Descripción o mensaje relacionado con la solicitud.</li>
+                    <li>Archivo de modelo 3D enviado voluntariamente por el usuario.</li>
+                </ul>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>3. Uso de la información</h2>
+                <p>La información recibida se utiliza para gestionar y revisar las solicitudes de impresión 3D, identificar correctamente al solicitante, revisar el modelo enviado y contactar al usuario cuando sea necesario para coordinar aspectos relacionados con su solicitud.</p>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>4. Archivos enviados</h2>
+                <p>Los archivos de modelos 3D enviados mediante el formulario se utilizan para revisar si el modelo es adecuado para el proceso de impresión. El proyecto no garantiza que estos archivos permanezcan almacenados indefinidamente.</p>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>5. Cuentas de usuario</h2>
+                <p>El sitio puede permitir la creación de cuentas mediante Firebase Authentication. La información asociada a una cuenta se utiliza para permitir el inicio de sesión y las funciones relacionadas con el usuario.</p>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>6. Historial de entregas</h2>
+                <p>Cuando corresponde, el sistema puede utilizar información asociada a la cuenta para mostrar un historial de entregas. Este historial puede incluir información como el nombre de una figura, una fecha, una descripción y una fotografía asociada a la entrega.</p>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>7. Servicios de terceros</h2>
+                <p>El sitio utiliza servicios de terceros para determinadas funciones, entre ellos Firebase para autenticación y almacenamiento de datos, y FormSubmit para el procesamiento y envío de formularios. Estos servicios pueden tratar información de acuerdo con sus propias políticas y condiciones.</p>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>8. Seguridad</h2>
+                <p>Intentamos manejar la información recibida de forma responsable. Sin embargo, ningún sistema conectado a Internet puede garantizar una seguridad absoluta frente a todos los riesgos existentes.</p>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>9. Menores de edad</h2>
+                <p>El proyecto está orientado principalmente a una comunidad educativa, por lo que algunas personas que utilizan el sitio pueden ser menores de edad. El sitio solicita únicamente la información necesaria para las funciones que ofrece.</p>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>10. Contacto</h2>
+                <p>Si tienes preguntas relacionadas con esta Política de Privacidad o con el tratamiento de la información proporcionada mediante el sitio, puedes visitar nuestra página de contacto.</p>
+                <p><a href="contacto.html" style="color:#347396;font-weight:bold;">Ir a Contáctanos</a></p>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div id="datos" class="datos">
+            <h3>
+                <img src="icono.png" alt="Logo de Impresiones 3D" style="width:50px;">
+                Impresiones3D AML
+            </h3>
+            <p>Impresiones3D, un sitio web independiente, trabajado por estudiantes.</p>
+            <p>Este sitio tiene el fin de que los estudiantes del Liceo Arturo Matte Larraín puedan hacer solicitudes de impresiones en 3D.</p>
+            <div>
+                <a href="privacidad.html">Política de privacidad</a> |
+                <a href="terminos.html">Términos y condiciones</a> |
+                <a href="contacto.html">Contáctanos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const botonModoOscuro=document.getElementById("btnModoOscuro");
+        if(localStorage.getItem("modoOscuro")==="true")document.body.classList.add("modo-oscuro");
+        if(botonModoOscuro){
+            botonModoOscuro.addEventListener("click",()=>{
+                document.body.classList.toggle("modo-oscuro");
+                localStorage.setItem("modoOscuro",document.body.classList.contains("modo-oscuro"));
+            });
+        }
+    </script>
+</body>
+</html>

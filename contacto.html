@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de contacto de Impresiones 3D AML. Encuentra información para realizar solicitudes y comunicarte con nuestro proyecto.">
+    <link rel="icon" type="image/png" href="icono.png">
+    <title>Contáctanos - Impresiones 3D AML</title>
+    <link rel="stylesheet" href="feria_Tp.css?v=999">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="titulo">
+                <a href="https://impresiones-3d-aml.web.app/">The Makers</a>
+            </h2>
+            <ul class="menu">
+                <li class="dropdown"><a href="https://impresiones-3d-aml.web.app/">Inicio</a></li>
+                <li class="dropdown"><a href="https://tks-grey.github.io/Impresiones_3D-Gallery/">Nuestra galería</a></li>
+                <li class="dropdown"><a href="https://impresiones-3d-aml.web.app/#seccionFormulario">Hacer solicitud</a></li>
+                <li class="dropdown"><button id="btnModoOscuro">Modo Oscuro</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="co">
+            <h1>Contáctanos</h1>
+            <p class="intro-text">¿Tienes una pregunta sobre nuestro proyecto, una solicitud de impresión o necesitas ayuda con un modelo 3D?</p>
+
+            <section class="contenido-seccion">
+                <h2>Solicitudes de impresión</h2>
+                <p>Si quieres solicitar una impresión 3D, utiliza el formulario disponible en nuestra página principal.</p>
+                <p>Para que podamos revisar correctamente tu solicitud, procura proporcionar:</p>
+                <ul>
+                    <li>Tu nombre y apellido.</li>
+                    <li>Tu correo institucional.</li>
+                    <li>Tu curso.</li>
+                    <li>El tamaño que deseas para la figura.</li>
+                    <li>Una descripción clara de lo que quieres imprimir.</li>
+                    <li>El archivo del modelo 3D, si cuentas con uno.</li>
+                </ul>
+                <p><a href="https://impresiones-3d-aml.web.app/#seccionFormulario" class="red-btn" style="display:inline-flex;width:auto;">Hacer una solicitud</a></p>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>Redes sociales</h2>
+                <p>Puedes conocer novedades y contenido relacionado con nuestro proyecto mediante nuestras redes sociales.</p>
+                <div class="redes" style="justify-content:center;">
+                    <a href="https://www.instagram.com/impresiones3daml?igsh=d2w1azA0MWZxMmtx" target="_blank" rel="noopener noreferrer" class="red-btn instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+                    </a>
+                    <a href="https://x.com/impesiones3DAML" target="_blank" rel="noopener noreferrer" class="red-btn twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        Twitter (X)
+                    </a>
+                </div>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>¿Sobre qué puedes contactarnos?</h2>
+                <p>Puedes comunicarte con nosotros para realizar consultas relacionadas con una solicitud de impresión, el funcionamiento del proyecto, los modelos 3D o las funciones disponibles en el sitio.</p>
+                <p>Para consultas relacionadas con una solicitud, recomendamos proporcionar la mayor cantidad de información posible para que podamos comprender correctamente lo que necesitas.</p>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>Sobre nuestro proyecto</h2>
+                <p>Impresiones 3D AML es un proyecto educativo desarrollado por estudiantes del Liceo Arturo Matte Larraín.</p>
+                <p>Nuestro objetivo es acercar la impresión 3D, el diseño y la fabricación digital a la comunidad estudiantil.</p>
+            </section>
+
+            <section class="contenido-seccion">
+                <h2>Documentación</h2>
+                <p>Para conocer cómo manejamos la información proporcionada mediante el sitio, puedes consultar nuestra Política de Privacidad.</p>
+                <p>También puedes revisar los Términos y Condiciones de uso del sitio.</p>
+                <p>
+                    <a href="privacidad.html" style="color:#347396;font-weight:bold;">Política de privacidad</a>
+                    &nbsp;|&nbsp;
+                    <a href="terminos.html" style="color:#347396;font-weight:bold;">Términos y condiciones</a>
+                </p>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div id="datos" class="datos">
+            <h3>
+                <img src="icono.png" alt="Logo de Impresiones 3D" style="width:50px;">
+                Impresiones3D AML
+            </h3>
+            <p>Impresiones3D, un sitio web independiente, trabajado por estudiantes.</p>
+            <p>Este sitio tiene el fin de que los estudiantes del Liceo Arturo Matte Larraín puedan hacer solicitudes de impresiones en 3D.</p>
+            <div>
+                <a href="privacidad.html">Política de privacidad</a> |
+                <a href="terminos.html">Términos y condiciones</a> |
+                <a href="contacto.html">Contáctanos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const botonModoOscuro=document.getElementById("btnModoOscuro");
+        if(localStorage.getItem("modoOscuro")==="true")document.body.classList.add("modo-oscuro");
+        if(botonModoOscuro){
+            botonModoOscuro.addEventListener("click",()=>{
+                document.body.classList.toggle("modo-oscuro");
+                localStorage.setItem("modoOscuro",document.body.classList.contains("modo-oscuro"));
+            });
+        }
+    </script>
+</body>
+</html>
