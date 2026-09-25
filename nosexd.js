@@ -29,6 +29,26 @@ import {
     getDownloadURL
 } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-storage.js";
 
+const btnInicio = document.getElementById("btnInicio");
+
+window.addEventListener("scroll", function(){
+
+    if(window.scrollY > 300){
+        btnInicio.classList.add("mostrar");
+    }else{
+        btnInicio.classList.remove("mostrar");
+    }
+
+});
+
+btnInicio.addEventListener("click", function(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
 
 const firebaseConfig = {
     apiKey:"AIzaSyC8hIsitvjMYaD9L1Gp_1FdVVrAV6jWP4A",
