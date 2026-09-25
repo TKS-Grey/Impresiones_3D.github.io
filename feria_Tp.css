@@ -351,35 +351,6 @@ footer{
     box-shadow:0 5px 12px rgba(0,0,0,.15);
 }
 
-
-.red-btn i{
-    font-size:25px;
-}
-
-
-.red-btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 20px rgba(0,0,0,.25);
-}
-
-
-/* Instagram */
-.instagram:hover{
-    background:linear-gradient(
-        45deg,
-        #feda75,
-        #d62976,
-        #962fbf,
-        #4f5bd5
-    );
-}
-
-
-/* Twitter/X */
-.twitter:hover{
-    background:#000;
-}
-
 .login-container{
     position:relative;
 }
@@ -401,20 +372,28 @@ footer{
     transform:scale(1.05);
 }
 
-.login {
-    position: absolute;
-    top: calc(100% - 5px);
-    right: 0;
-    width: 380px;
-    min-height: 150px;
-    padding: 25px;
-    background-color: #FFFDFB;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1000;
+.login{
+    position:fixed;
+    top:120px;
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+    width:380px;
+    max-width:calc(100vw - 30px);
+    min-height:150px;
+    padding:25px;
+    background-color:#FFFDFB;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    z-index:1000;
+    box-sizing:border-box;
+}
+
+.login.mostrar{
+    display:flex;
 }
 
 .login::before {
@@ -754,133 +733,6 @@ body.modo-oscuro small{
     gap: 20px;
     margin-top: 50px;
 }
-@media (max-width: 768px) {
-
-    header{
-        padding: 15px 5px;
-    }
-
-    .navbar{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .titulo{
-        font-size: 28px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .menu{
-        display: flex;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        justify-content: space-between;
-        align-items: stretch;
-
-        width: 100%;
-        gap: 0;
-
-        list-style: none;
-    }
-
-    .menu li{
-        display: block;
-        flex: 1 1 25%;
-        width: 25%;
-        min-width: 0;
-    }
-
-    .menu a,
-    .menu button{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        width: 100%;
-        min-height: 55px;
-
-        padding: 5px 2px;
-
-        font-size: 11px;
-        line-height: 1.2;
-        text-align: center;
-
-        white-space: normal;
-    }
-
-    .centroa{
-        width: 100%;
-        margin: 20px auto;
-        padding: 10px;
-    }
-
-    .co{
-        width: 100%;
-        padding: 20px 15px;
-        border-radius: 12px;
-    }
-
-    .co h1{
-        font-size: 25px;
-        line-height: 1.3;
-    }
-
-    .co p{
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-    .repe{
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .imagen{
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .long-imagen{
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .contenedorbase,
-    .rojito{
-        width: 100%;
-        margin: 30px auto;
-        padding: 20px 15px;
-    }
-
-    main{
-        width: 100%;
-        padding: 0;
-        display: block;
-    }
-
-    form{
-        width: 100%;
-    }
-
-    .redes{
-        width: 100%;
-        margin: 0;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .red-btn{
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
 
 .intro-text{
     font-size:18px;
@@ -1017,32 +869,6 @@ body.modo-oscuro .contenido-seccion{
 body.modo-oscuro .paso{
     background:#28303d;
     border-color:#3e5266;
-}
-
-@media (max-width:768px){
-    .info-grid{
-        grid-template-columns:1fr;
-        gap:15px;
-        margin:25px 0;
-    }
-
-    .contenido-seccion{
-        margin:30px 0;
-        padding:20px 15px;
-    }
-
-    .contenido-seccion h2{
-        font-size:23px;
-    }
-
-    .pasos-grid{
-        grid-template-columns:1fr;
-        gap:12px;
-    }
-
-    .intro-text{
-        font-size:17px;
-    }
 }
 
 /* ===== de aca para abajo, es full ia XD ===== */
@@ -1199,122 +1025,450 @@ body.modo-oscuro .info a:hover{
 
 /* MÓVILES */
 
-@media (max-width:768px){
+.btn-inicio{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#347396;
+    color:white;
+    font-size:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(20px);
+    transition:all .3s ease;
+    z-index:999;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+.btn-inicio.mostrar{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.btn-inicio:hover{
+    background:#2d617c;
+    transform:translateY(-4px);
+}
+
+body.modo-oscuro .btn-inicio{
+    background:#4a6fa5;
+    color:#ffffff;
+}
+
+body.modo-oscuro .btn-inicio:hover{
+    background:#5d83bd;
+}
+
+
+@media (max-width: 768px){
+    .btn-inicio{
+        width:45px;
+        height:45px;
+        right:15px;
+        bottom:15px;
+        font-size:18px;
+    }
+    
+    /* =========================
+       HEADER
+       ========================= */
+
+    header{
+        width:100%;
+        padding:12px 8px;
+        box-sizing:border-box;
+    }
+
+    .navbar{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        gap:5px;
+        box-sizing:border-box;
+    }
+
+    .titulo{
+        width:100%;
+        margin:0;
+        padding:0;
+        text-align:center;
+        font-size:28px;
+        line-height:1.1;
+    }
+
+    .titulo a{
+        display:block;
+        width:100%;
+        text-align:center;
+    }
+
+    /* =========================
+       MENU
+       ========================= */
+
+    .menu{
+        width:100%;
+        margin:0;
+        padding:0;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:0;
+        list-style:none;
+        box-sizing:border-box;
+    }
+
+    .menu li{
+        width:100%;
+        height:38px;
+        min-width:0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        box-sizing:border-box;
+    }
+
+    .menu a,
+    .menu button{
+        width:100%;
+        height:38px;
+        min-height:38px;
+        padding:3px 4px;
+        margin:0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        font-size:11px;
+        line-height:1.1;
+        white-space:normal;
+        box-sizing:border-box;
+    }
+
+    /* =========================
+       USUARIO E HISTORIAL
+       ========================= */
+
+    .login-container{
+        width:100%;
+        height:42px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        box-sizing:border-box;
+    }
+
+    .btn-login{
+        width:90%;
+        max-width:160px;
+        height:36px;
+        min-height:36px;
+        padding:4px 6px;
+        font-size:11px;
+        line-height:1.1;
+        box-sizing:border-box;
+    }
+
+    #historialItem{
+        width:100%;
+        height:42px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        box-sizing:border-box;
+    }
+
+    #historialItem a{
+        width:100%;
+        height:38px;
+        min-height:38px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:3px;
+        font-size:11px;
+        box-sizing:border-box;
+    }
+
+    /* =========================
+       LOGIN DESPLEGABLE
+       ========================= */
+
+    .login{
+        position:fixed;
+        top:110px;
+        left:50%;
+        right:auto;
+        transform:translateX(-50%);
+        width:calc(100vw - 30px);
+        max-width:380px;
+        padding:20px 15px;
+        box-sizing:border-box;
+    }
+
+    /* =========================
+       CONTENIDO PRINCIPAL
+       ========================= */
+
+    .centroa{
+        width:100%;
+        margin:60px auto 20px auto;
+        padding:10px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        box-sizing:border-box;
+    }
+
+    .co{
+        width:100%;
+        max-width:100%;
+        margin:0;
+        padding:20px 15px;
+        border-radius:12px;
+        box-sizing:border-box;
+        overflow:hidden;
+    }
+
+    .co h1{
+        width:100%;
+        margin-bottom:20px;
+        font-size:25px;
+        line-height:1.3;
+        text-align:center;
+        overflow-wrap:break-word;
+    }
+
+    .co p{
+        width:100%;
+        font-size:16px;
+        line-height:1.6;
+        text-align:center;
+        overflow-wrap:break-word;
+    }
+
+    .intro-text{
+        font-size:17px;
+    }
+
+    /* =========================
+       TARJETAS
+       ========================= */
+
+    .info-grid{
+        width:100%;
+        display:grid;
+        grid-template-columns:1fr;
+        gap:15px;
+        margin:25px 0;
+    }
+
+    .info-card{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    /* =========================
+       SECCIONES
+       ========================= */
+
+    .contenido-seccion{
+        width:100%;
+        margin:30px 0;
+        padding:20px 15px;
+        box-sizing:border-box;
+    }
+
+    .contenido-seccion h2{
+        font-size:23px;
+        line-height:1.3;
+        text-align:center;
+    }
+
+    .contenido-seccion p{
+        font-size:15px;
+        line-height:1.6;
+    }
+
+    /* =========================
+       PASOS
+       ========================= */
+
+    .pasos-grid{
+        width:100%;
+        display:grid;
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .paso{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    /* =========================
+       IMAGENES
+       ========================= */
+
+    .repe{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+    .imagen{
+        width:100%;
+        max-width:350px;
+        height:auto;
+        box-sizing:border-box;
+    }
+
+    .long-imagen{
+        display:block;
+        width:100%;
+        max-width:100%;
+        height:auto;
+        box-sizing:border-box;
+    }
+
+    /* =========================
+       FORMULARIO
+       ========================= */
+
+    .contenedorbase{
+        width:100%;
+        max-width:100%;
+        margin:30px 0;
+        padding:20px 15px;
+        box-sizing:border-box;
+    }
+
+    main{
+        width:100%;
+        padding:0;
+        display:block;
+        box-sizing:border-box;
+    }
+
+    form{
+        width:100%;
+    }
+
+    .nombe{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    .nombe input,
+    .nombe select,
+    .nombe textarea{
+        width:100%;
+        max-width:100%;
+        box-sizing:border-box;
+    }
+
+    #archivoFigura{
+        width:100%;
+        box-sizing:border-box;
+        font-size:13px;
+    }
+
+    .sube{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    /* =========================
+       REDES SOCIALES
+       ========================= */
+
+    .redes{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:12px;
+        padding:0 10px;
+        box-sizing:border-box;
+    }
+
+    .red-btn{
+        width:100%;
+        max-width:300px;
+        box-sizing:border-box;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer{
+        width:100%;
+        padding:25px 15px;
+        box-sizing:border-box;
+    }
+
+    .datos{
+        width:100%;
+        max-width:800px;
+        box-sizing:border-box;
+    }
+
+    .nombres{
+        width:100%;
+        text-align:center;
+    }
 
     .info{
+        width:100%;
         flex-direction:column;
         gap:10px;
         margin-top:20px;
         padding:15px;
+        box-sizing:border-box;
     }
 
     .info a{
         font-size:15px;
     }
 
-}
-
-/* ================================
-   MODO OSCURO
-   ================================ */
-
-body.modo-oscuro .pagina-info{
-    background:#28303d;
-    box-shadow:0 8px 20px rgba(0,0,0,.4);
-}
-
-body.modo-oscuro .pagina-info h1{
-    color:#b8e1ff;
-}
-
-body.modo-oscuro .pagina-info h2{
-    color:#b8e1ff;
-}
-
-body.modo-oscuro .pagina-info h3{
-    color:#b8e1ff;
-}
-
-body.modo-oscuro .pagina-info p{
-    color:#c5d1de;
-}
-
-body.modo-oscuro .pagina-info ul{
-    color:#c5d1de;
-}
-
-body.modo-oscuro .pagina-info strong{
-    color:#b8e1ff;
-}
-
-body.modo-oscuro .pagina-info a{
-    color:#90cfff;
-}
-
-body.modo-oscuro .pagina-info a:hover{
-    color:#b8e1ff;
-}
-
-body.modo-oscuro .info-aviso{
-    background:#232a34;
-    border-left-color:#4a6fa5;
-}
-
-body.modo-oscuro .boton-volver{
-    background:#4a6fa5;
-}
-
-body.modo-oscuro .boton-volver:hover{
-    background:#5d83bd;
-}
-
-
-/* ================================
-   MOVILES
-   ================================ */
-
-@media (max-width:768px){
+    /* =========================
+       PAGINAS DE INFORMACION
+       ========================= */
 
     .pagina-info{
         width:100%;
-        margin:20px auto;
+        margin:20px 0;
         padding:25px 18px;
-        border-radius:12px;
+        box-sizing:border-box;
     }
 
     .pagina-info h1{
         font-size:26px;
         line-height:1.3;
-        margin-bottom:25px;
     }
 
     .pagina-info h2{
         font-size:21px;
         line-height:1.3;
-        margin-top:25px;
-    }
-
-    .pagina-info h3{
-        font-size:18px;
     }
 
     .pagina-info p{
         font-size:15px;
         line-height:1.7;
-    }
-
-    .pagina-info ul{
-        margin-left:20px;
-        padding-right:5px;
-    }
-
-    .pagina-info li{
-        font-size:15px;
-        line-height:1.6;
-    }
-
-    .info-aviso{
-        padding:15px;
     }
 
     .info-contacto{
@@ -1324,6 +1478,7 @@ body.modo-oscuro .boton-volver:hover{
 
     .boton-volver{
         width:100%;
+        box-sizing:border-box;
         text-align:center;
     }
 }
